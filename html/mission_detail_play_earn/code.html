@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mission Details - Play &amp; Earn</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff6600",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#23170f",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="max-w-md mx-auto bg-background-light dark:bg-background-dark min-h-screen flex flex-col relative overflow-hidden">
+<!-- Header -->
+<header class="flex items-center px-4 py-4 justify-between sticky top-0 z-20 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold tracking-tight">Mission Details</h2>
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">help</span>
+</button>
+</header>
+<!-- Content Area -->
+<main class="flex-1 overflow-y-auto pb-24">
+<!-- Hero Mission Card -->
+<div class="px-4 py-2">
+<div class="relative overflow-hidden rounded-xl h-56 group" data-alt="Happy dog eating a healthy snack reward" style='background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuC-ZjpYfrSNE3EYtZQPHisnD2A6Cuo8yaxTFRxasqTGkAnHt6NV-dYrDk2PmdCaYRXHo9q8igh9vgq2KYMUT44ZwxeF3AnVKSElgko1v12b55Q8pRfJURlMkBYwPsw-JufyWu_bELAFo6yQ8-hgnq62Mnjpx9Izyhv7UGI1m6KBzTGAznhSOLKxNvsueFhr-ZbzTrPQoiOwycSTAV9Pvb3FVoSZQY3d7wL52bu_eSe0FXCwoczqKFhDE76JKGpVvI1RbSCpkxr7N5k8"); background-size: cover; background-position: center;'>
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+<div class="absolute bottom-0 left-0 p-5 w-full">
+<div class="flex items-center gap-2 mb-1">
+<span class="bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Limited Time</span>
+</div>
+<h1 class="text-white text-3xl font-extrabold leading-tight">Buy 3 Dog Snacks</h1>
+<p class="text-white/80 text-sm font-medium">Available at any partner pet store</p>
+</div>
+</div>
+</div>
+<!-- Reward Section -->
+<div class="mt-6 px-4">
+<div class="bg-primary/10 dark:bg-primary/5 border border-primary/20 rounded-xl p-6 text-center">
+<p class="text-sm font-semibold text-primary uppercase tracking-widest mb-1">Potential Reward</p>
+<div class="flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-primary text-4xl font-bold">monetization_on</span>
+<span class="text-4xl font-black text-slate-900 dark:text-slate-100">500 <span class="text-xl font-bold">PTS</span></span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-2">Points will be added to your wallet instantly after completion</p>
+</div>
+</div>
+<!-- Progress Tracker -->
+<div class="mt-8 px-4">
+<div class="flex justify-between items-end mb-3">
+<h3 class="font-bold text-xl">Your Progress</h3>
+<span class="text-primary font-bold">2 of 3 steps</span>
+</div>
+<div class="w-full bg-slate-200 dark:bg-slate-800 h-4 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full transition-all duration-500" style="width: 66%;"></div>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-sm mt-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-base">info</span>
+                    Almost there! Only 1 more snack purchase to go.
+                </p>
+</div>
+<!-- Steps List -->
+<div class="mt-8 px-4 space-y-4">
+<h3 class="font-bold text-lg mb-4">Milestones</h3>
+<!-- Completed Step -->
+<div class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
+<div class="flex-shrink-0 size-8 rounded-full bg-green-500 text-white flex items-center justify-center">
+<span class="material-symbols-outlined text-lg font-bold">check</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-slate-900 dark:text-slate-100 line-through decoration-slate-400">First Purchase</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Completed on Oct 12, 2023</p>
+</div>
+</div>
+<!-- Completed Step -->
+<div class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
+<div class="flex-shrink-0 size-8 rounded-full bg-green-500 text-white flex items-center justify-center">
+<span class="material-symbols-outlined text-lg font-bold">check</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-slate-900 dark:text-slate-100 line-through decoration-slate-400">Second Purchase</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Completed on Oct 14, 2023</p>
+</div>
+</div>
+<!-- Current Step -->
+<div class="flex items-start gap-4 p-4 rounded-xl bg-white dark:bg-slate-800 border-2 border-primary shadow-sm">
+<div class="flex-shrink-0 size-8 rounded-full border-2 border-primary text-primary flex items-center justify-center font-bold text-sm">
+                        3
+                    </div>
+<div class="flex-1">
+<p class="font-bold text-slate-900 dark:text-slate-100">Final Purchase</p>
+<p class="text-sm text-slate-600 dark:text-slate-400">Upload a receipt of any dog snack brand</p>
+<button class="mt-3 flex items-center gap-2 px-4 py-2 bg-primary text-white font-bold rounded-lg text-sm shadow-md shadow-primary/20">
+<span class="material-symbols-outlined text-sm">photo_camera</span>
+                            Scan Receipt
+                        </button>
+</div>
+</div>
+</div>
+<!-- Disclaimer -->
+<div class="mt-10 px-6 pb-10">
+<p class="text-[11px] text-slate-400 dark:text-slate-500 text-center leading-relaxed italic">
+                    Terms &amp; Conditions apply. Mission ends in 3 days. Points are subject to verification of proof of purchase.
+                </p>
+</div>
+</main>
+<!-- Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto flex gap-2 border-t border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark px-4 pb-6 pt-2 z-50">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500 transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px] fill-current" style="font-variation-settings: 'FILL' 1">target</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Missions</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500 transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">account_balance_wallet</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Wallet</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500 transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Profile</p>
+</a>
+</nav>
+</div>
+</body></html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff6600",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#23170f",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full max-w-md mx-auto flex-col bg-background-light dark:bg-background-dark overflow-x-hidden">
+<!-- Top Navigation -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-primary/10">
+<div class="text-slate-900 dark:text-slate-100 flex size-12 shrink-0 items-center justify-start cursor-pointer">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-12">Checkout</h2>
+</div>
+<!-- Progress Indicator -->
+<div class="px-4 py-4 flex items-center justify-between gap-2">
+<div class="flex-1 h-1.5 bg-primary rounded-full"></div>
+<div class="flex-1 h-1.5 bg-primary rounded-full"></div>
+<div class="flex-1 h-1.5 bg-primary/20 dark:bg-primary/10 rounded-full"></div>
+</div>
+<!-- Pickup Location Section -->
+<div class="px-4 pt-2">
+<div class="flex items-center justify-between mb-3">
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight">Pickup Location</h3>
+<span class="text-primary text-sm font-semibold">Change</span>
+</div>
+<div class="flex flex-col gap-4 rounded-xl bg-white dark:bg-slate-800 p-4 shadow-sm border border-primary/5">
+<div class="flex items-start gap-4">
+<div class="flex-1 flex flex-col gap-1">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight">Downtown Pet Hub</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">123 Main St, City Center</p>
+<div class="flex items-center gap-2 mt-1 text-xs font-medium text-emerald-600 dark:text-emerald-400">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+                            Ready for pickup in 2 hours
+                        </div>
+</div>
+<div class="w-24 bg-center bg-no-repeat aspect-square bg-cover rounded-lg shrink-0" data-alt="Map showing downtown pet hub location" data-location="New York" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBZB2_4wPHsVGTBOC_1tqWwD_Vq97d1uw8-SDjJWC_--xKu-ccCp48Q9EaL9Wefh_i1Touy4csfWN3lJe7VYIlMvs5_YJRkmfXuX8GKCm0EWEli9I972HqSXogQh_iSyoXytZab6ievyik4rZ2BZHdOAgW1GwR2HIhyYacqyKfFfJ41wLH1pitbZHm-7KdjVD31112dTq95HZySmlCrGzZIGVkCq-2LekpR9OIGAYToD8oba7zcKgZQI4cxHjGCxggPWG2KKMQi4ZEZ");'></div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 flex cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary/10 dark:bg-primary/20 text-primary gap-2 text-sm font-semibold">
+<span class="material-symbols-outlined text-lg">directions</span>
+                        Get Directions
+                    </button>
+<button class="flex-1 flex cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-white gap-2 text-sm font-semibold">
+<span class="material-symbols-outlined text-lg">call</span>
+                        Contact Store
+                    </button>
+</div>
+</div>
+</div>
+<!-- Order Summary Section -->
+<div class="px-4 pt-6">
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight mb-3">Order Summary</h3>
+<div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-primary/5 divide-y divide-primary/5">
+<!-- Item 1 -->
+<div class="flex items-center gap-4 px-4 py-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-16 border border-primary/10" data-alt="Premium organic dog food bag" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCo9FZf61dftUdB4qcClnWACup7X4hr6NoaoPRWySAQUZ3Z4VjZWJ2KxKzjAN_8vGY6XueTjdfiqxWxxgYtgv4WBDUD4RLr14s1AyfjHNdE4Eo9ANr2qXclb7Bc40wg9sIXenMznDH2KQ9OeizprtkRybdb70fqxl8OHyECx7V8auFsMms-BxCaceM_UboCAmkYsQea26tGSYi7-ZMQCcPMCzvmnWVyRMgQdlqV5S-GgpB7zXnFN9ZXTVCHVmA_u4A-RUiKOTB61iYm");'></div>
+<div class="flex flex-col flex-1">
+<p class="text-slate-900 dark:text-slate-100 text-sm font-bold leading-tight">Premium Grain-Free Dog Food</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs mt-1">12kg • Qty: 1</p>
+<p class="text-primary text-sm font-bold mt-1">$45.00</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center gap-4 px-4 py-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-16 border border-primary/10" data-alt="Bottle of pet multivitamin supplements" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCZyFTvujuYbBNrjgcmYsz9N6czY6KFNOuRj2pnpeptM8T56erH5CkrS3ChRMn0XxobLZi9X9XHGXOCyWmwJWtmSoo1xBEhwprYi9rgwKAOYZcNG3gkg-XyWVDYlC8iH9MLCXNDb5LZ1vJ6PKw9d-05OylZHzl5Kuo9p1orheSRVrYGCv-7jfaNKPGX4TL3p9DA32iG_z2cv-tJKyleLooN_PcghbYQTzPVP7ZEKlvJgf6QUx4R6OXfaZa2Hak49TzMmXZCMp9h2KnP");'></div>
+<div class="flex flex-col flex-1">
+<p class="text-slate-900 dark:text-slate-100 text-sm font-bold leading-tight">Daily Multivitamin Soft Chews</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs mt-1">60 Count • Qty: 2</p>
+<p class="text-primary text-sm font-bold mt-1">$32.00</p>
+</div>
+</div>
+<!-- Price Breakdown -->
+<div class="p-4 space-y-2">
+<div class="flex justify-between text-sm">
+<span class="text-slate-500 dark:text-slate-400">Subtotal</span>
+<span class="text-slate-900 dark:text-slate-100 font-medium">$77.00</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-slate-500 dark:text-slate-400">Pickup Fee</span>
+<span class="text-emerald-600 dark:text-emerald-400 font-medium">Free</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-slate-500 dark:text-slate-400">Taxes</span>
+<span class="text-slate-900 dark:text-slate-100 font-medium">$4.50</span>
+</div>
+<div class="pt-2 flex justify-between text-base border-t border-primary/5">
+<span class="text-slate-900 dark:text-slate-100 font-bold">Total</span>
+<span class="text-primary font-bold text-lg">$81.50</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Payment Method Section -->
+<div class="px-4 pt-6 pb-24">
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight mb-3">Payment Method</h3>
+<div class="flex items-center justify-between p-4 rounded-xl bg-white dark:bg-slate-800 border border-primary/5 shadow-sm">
+<div class="flex items-center gap-3">
+<div class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">credit_card</span>
+</div>
+<div>
+<p class="text-slate-900 dark:text-slate-100 text-sm font-bold">Pre-pay with Visa</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Ending in •••• 4242</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</div>
+<div class="mt-4 flex items-start gap-2 text-xs text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-sm shrink-0">info</span>
+<p>Your items will be reserved for 24 hours after your scheduled pickup time. Payment will be processed once you check in at the store.</p>
+</div>
+</div>
+<!-- Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white/80 dark:bg-slate-900/80 backdrop-blur-md p-4 border-t border-primary/10">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/20 transition-all active:scale-[0.98]">
+                Place Pickup Order • $81.50
+            </button>
+</div>
+</div>
+</body></html>

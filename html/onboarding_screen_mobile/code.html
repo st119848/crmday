@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff6600",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#23170f",
+                        "line-green": "#06C755",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden max-w-md mx-auto shadow-2xl">
+<!-- Top Navigation -->
+<div class="flex items-center bg-transparent p-4 pb-2 justify-between">
+<div class="text-slate-900 dark:text-slate-100 flex size-10 shrink-0 items-center justify-center rounded-full bg-white/50 dark:bg-white/10">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">
+                เข้าสู่ระบบ
+            </h2>
+</div>
+<!-- Progress Indicator -->
+<div class="flex flex-col gap-3 p-6">
+<div class="flex gap-6 justify-between items-end">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold leading-normal">ขั้นตอนที่ 1</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium leading-normal">1 จาก 3</p>
+</div>
+<div class="rounded-full bg-primary/20 h-2 w-full overflow-hidden">
+<div class="h-full rounded-full bg-primary transition-all duration-500" style="width: 33%;"></div>
+</div>
+</div>
+<!-- Hero Section -->
+<div class="flex flex-col items-center justify-center px-6 py-8">
+<div class="w-32 h-32 rounded-full bg-primary/10 flex items-center justify-center mb-8 border-4 border-primary/5">
+<span class="material-symbols-outlined text-primary !text-6xl">fingerprint</span>
+</div>
+<h1 class="text-slate-900 dark:text-slate-100 tracking-tight text-3xl font-bold leading-tight text-center pb-3">
+                ยินดีต้อนรับสู่ Super CRM
+            </h1>
+<p class="text-slate-600 dark:text-slate-400 text-base font-normal leading-relaxed text-center px-4">
+                เชื่อมต่อบัญชี LINE ของคุณเพื่อสะสมแต้ม แลกของรางวัล และรับสิทธิพิเศษมากมาย
+            </p>
+</div>
+<!-- LINE Button -->
+<div class="px-6 pb-6">
+<button class="w-full bg-line-green hover:bg-[#05b34c] text-white flex items-center justify-center gap-3 py-4 rounded-xl font-bold text-lg shadow-lg shadow-line-green/20 transition-all">
+<svg class="w-7 h-7" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M19.228 10.932c.113.567.07 1.157-.123 1.706-.192.548-.54 1.026-.998 1.373a4.05 4.05 0 0 1-1.373.65 3.963 3.963 0 0 1-1.706.024 3.963 3.963 0 0 1-1.547-.57 4.05 4.05 0 0 1-1.123-1.222 4.05 4.05 0 0 1-.502-1.57c-.062-.572-.004-1.153.167-1.7l1.734-5.594A2.08 2.08 0 0 1 15.532 2h.11c.42.003.829.131 1.176.368.347.237.616.57.77.957l1.64 7.607zm-7.466 2.373a3.96 3.96 0 0 1-.65 1.373 3.96 3.96 0 0 1-1.157.948 4.05 4.05 0 0 1-1.52.502 3.963 3.963 0 0 1-1.706-.123 3.96 3.96 0 0 1-1.373-.65 4.05 4.05 0 0 1-.948-1.157 4.05 4.05 0 0 1-.502-1.52 3.963 3.963 0 0 1 .123-1.706l1.734-5.594A2.08 2.08 0 0 1 8.94 2h.11c.42.003.829.131 1.176.368.347.237.616.57.77.957l1.766 8.164a3.963 3.963 0 0 1-.1 1.816zm-7.466 2.373a4.05 4.05 0 0 1-.65 1.373 3.96 3.96 0 0 1-1.157.948 4.05 4.05 0 0 1-1.52.502 3.963 3.963 0 0 1-1.706-.123 3.96 3.96 0 0 1-1.373-.65 4.05 4.05 0 0 1-.948-1.157 4.05 4.05 0 0 1-.502-1.52 3.963 3.963 0 0 1 .123-1.706l1.734-5.594A2.08 2.08 0 0 1 2.348 2h.11c.42.003.829.131 1.176.368.347.237.616.57.77.957l1.766 8.164a3.963 3.963 0 0 1-.1 1.816z"></path>
+<!-- Simplified LINE logo path -->
+<path d="M24 10.304c0-4.587-4.815-8.304-10.75-8.304S2.5 5.717 2.5 10.304c0 4.113 3.818 7.55 8.98 8.196.349.075.824.23 1.054.528.241.312.158.8.077 1.115-.081.315-.37 1.258-.45 1.526-.135.454-.62 1.777.268 1.777.896 0 4.743-2.859 6.47-4.9.014-.016.027-.033.041-.05 3.322-1.928 5.36-4.805 5.36-7.892zM7.34 13.593H4.814a.5.5 0 0 1-.5-.5V7.411a.5.5 0 0 1 .5-.5h.5a.5.5 0 0 1 .5.5v5.182h1.526a.5.5 0 0 1 .5.5v.5a.5.5 0 0 1-.5.5zm2.844 0h-.5a.5.5 0 0 1-.5-.5V7.411a.5.5 0 0 1 .5-.5h.5a.5.5 0 0 1 .5.5v5.682a.5.5 0 0 1-.5.5zm4.846 0h-.443a.5.5 0 0 1-.448-.282l-1.983-4.148v3.93a.5.5 0 0 1-.5.5h-.5a.5.5 0 0 1-.5-.5V7.411a.5.5 0 0 1 .5-.5h.443a.5.5 0 0 1 .448.282l1.983 4.148v-3.93a.5.5 0 0 1 .5-.5h.5a.5.5 0 0 1 .5.5v6.182a.5.5 0 0 1-.5.5zm3.725-3.085h-1.526V7.411a.5.5 0 0 1 .5-.5h2.152a.5.5 0 0 1 .5.5v.5a.5.5 0 0 1-.5.5h-1.652v1.341h1.526a.5.5 0 0 1 .5.5v.5a.5.5 0 0 1-.5.5zm1.152 2.585h-2.152a.5.5 0 0 1-.5-.5v-.5a.5.5 0 0 1 .5-.5h1.652v-.25h-1.526a.5.5 0 0 1-.5-.5v-.5a.5.5 0 0 1 .5-.5h2.026a.5.5 0 0 1 .5.5v1.75a.5.5 0 0 1-.5.5z"></path>
+</svg>
+                เข้าใช้งานด้วย LINE
+            </button>
+</div>
+<!-- PDPA Bottom Sheet/Section -->
+<div class="mt-auto bg-white dark:bg-slate-900 rounded-t-xl p-6 shadow-[0_-10px_40px_rgba(0,0,0,0.05)] border-t border-primary/5">
+<div class="w-12 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full mx-auto mb-6"></div>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">gavel</span>
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold">นโยบายความเป็นส่วนตัว (PDPA)</h3>
+</div>
+<div class="bg-primary/5 dark:bg-primary/10 rounded-lg p-4 mb-6 max-h-32 overflow-y-auto border border-primary/10">
+<p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                    เราให้ความสำคัญกับความเป็นส่วนตัวของคุณ ข้อมูลส่วนบุคคลของคุณจะถูกนำไปใช้เพื่อวัตถุประสงค์ในการให้บริการระบบสะสมแต้ม การวิเคราะห์ข้อมูลเพื่อปรับปรุงบริการ และการส่งข่าวสารโปรโมชั่นที่คุณอาจสนใจ โดยจะเป็นไปตามนโยบายคุ้มครองข้อมูลส่วนบุคคลของ Super CRM...
+                </p>
+</div>
+<div class="flex items-start gap-3 mb-6">
+<div class="flex items-center h-5">
+<input class="w-5 h-5 text-primary border-slate-300 rounded focus:ring-primary focus:ring-offset-0 bg-white dark:bg-slate-800" id="pdpa-consent" type="checkbox"/>
+</div>
+<label class="text-sm text-slate-600 dark:text-slate-400 leading-tight cursor-pointer" for="pdpa-consent">
+                    ฉันยินยอมให้เก็บข้อมูล ประมวลผล และเปิดเผยข้อมูลส่วนบุคคลตามที่ระบุไว้ในนโยบายข้างต้น
+                </label>
+</div>
+<button class="w-full bg-primary hover:bg-orange-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2">
+                ยอมรับและดำเนินการต่อ
+                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<div class="mt-4 text-center">
+<p class="text-xs text-slate-400 dark:text-slate-500 uppercase tracking-widest font-bold">Powered by Super CRM</p>
+</div>
+</div>
+<!-- Background Decorative Element -->
+<div class="absolute -top-20 -right-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-1/2 -left-32 w-80 h-80 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+</div>
+</body></html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CRM Promotions</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Top Navigation Header -->
+<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-4 border-b border-primary/10">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">local_offer</span>
+<h1 class="text-xl font-bold tracking-tight">Promotions</h1>
+</div>
+<div class="flex gap-2">
+<button class="p-2 rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1 pb-24">
+<!-- Search Bar -->
+<div class="px-4 py-4">
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-slate-400 group-focus-within:text-primary transition-colors">search</span>
+</div>
+<input class="block w-full pl-10 pr-4 py-3 bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none text-sm" placeholder="Search promotions, campaigns or tags..." type="text"/>
+</div>
+</div>
+<!-- Category Filters -->
+<div class="flex gap-3 px-4 py-2 overflow-x-auto no-scrollbar">
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-primary px-5 text-white shadow-lg shadow-primary/20">
+<span class="text-sm font-semibold leading-normal">All</span>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-5 text-slate-600 dark:text-slate-300 hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-[20px]">new_releases</span>
+<span class="text-sm font-medium leading-normal">New</span>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-5 text-slate-600 dark:text-slate-300 hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-[20px]">timer</span>
+<span class="text-sm font-medium leading-normal">Ending Soon</span>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-5 text-slate-600 dark:text-slate-300 hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+<span class="text-sm font-medium leading-normal">For You</span>
+</button>
+</div>
+<!-- Featured Offers (Horizontal Scroll) -->
+<div class="mt-6">
+<div class="flex items-center justify-between px-4 mb-4">
+<h2 class="text-lg font-bold">Featured Campaigns</h2>
+<a class="text-primary text-sm font-semibold" href="#">View all</a>
+</div>
+<div class="flex gap-4 px-4 overflow-x-auto no-scrollbar pb-4">
+<!-- Featured Card 1 -->
+<div class="min-w-[280px] bg-gradient-to-br from-primary to-[#ff8c42] rounded-2xl p-5 text-white flex flex-col justify-between h-44 shadow-xl shadow-primary/10 relative overflow-hidden">
+<div class="absolute -right-4 -top-4 opacity-20">
+<span class="material-symbols-outlined text-8xl">auto_graph</span>
+</div>
+<div class="z-10">
+<span class="text-xs font-bold uppercase tracking-wider bg-white/20 px-2 py-1 rounded">Flash Sale</span>
+<h3 class="text-xl font-bold mt-2">Summer Essentials</h3>
+<p class="text-white/80 text-sm">Up to 45% discount on all seasonal items.</p>
+</div>
+<div class="z-10 flex justify-between items-end">
+<span class="text-xs font-medium">Ends in 2 days</span>
+<button class="bg-white text-primary px-3 py-1.5 rounded-lg text-xs font-bold">Activate</button>
+</div>
+</div>
+<!-- Featured Card 2 -->
+<div class="min-w-[280px] bg-slate-900 rounded-2xl p-5 text-white flex flex-col justify-between h-44 shadow-xl shadow-slate-900/10 relative overflow-hidden border border-slate-800">
+<div class="absolute -right-4 -top-4 opacity-20">
+<span class="material-symbols-outlined text-8xl">loyalty</span>
+</div>
+<div class="z-10">
+<span class="text-xs font-bold uppercase tracking-wider bg-primary/20 text-primary px-2 py-1 rounded">Exclusive</span>
+<h3 class="text-xl font-bold mt-2">VIP Early Access</h3>
+<p class="text-slate-400 text-sm">Preview of next week's premium collection.</p>
+</div>
+<div class="z-10 flex justify-between items-end">
+<span class="text-xs font-medium text-slate-500">Starts tomorrow</span>
+<button class="bg-primary text-white px-3 py-1.5 rounded-lg text-xs font-bold">Details</button>
+</div>
+</div>
+</div>
+</div>
+<!-- All Promotions List -->
+<div class="mt-6 px-4 space-y-4">
+<h2 class="text-lg font-bold mb-4">Active Promotions</h2>
+<!-- List Item 1 -->
+<div class="bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/50 rounded-xl p-4 flex gap-4 hover:border-primary/30 transition-all cursor-pointer">
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0 bg-primary/5 flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Product promo image of a minimalist watch" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASJ1yzG27RKEmObCaFei8PZ0Ef2FqAperIA7-xwW9lCPsiCEeuA0T6H-Zk35OyFoBHs6qAkcIjuiN7ixRCLrma7N039OW6__8eGQuH9bzCac8qTjDtXVWM0KPP7kfi3s27VJv6EOLqwgFT76xb0M0W4R_j0XaCDAHLQpMb4o9lh5kozuFuxpeQiLFNzE5WbxB-1cyHNPxabLxTUGEbrwLP3uP2YeMcHuEq4uA5VxIdHSL8GPS6YANzV_LtYhkq5CSx2ORnHFTRo1Qq"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-base leading-tight">Bundle &amp; Save: Tech Kit</h4>
+<span class="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-[10px] font-bold px-2 py-0.5 rounded-full">ACTIVE</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-xs mt-1">Buy 3 accessories and get the 4th free.</p>
+</div>
+<div class="flex items-center gap-4 mt-2">
+<div class="flex items-center text-[11px] text-slate-400">
+<span class="material-symbols-outlined text-[14px] mr-1">group</span>
+                            1.2k reach
+                        </div>
+<div class="flex items-center text-[11px] text-slate-400">
+<span class="material-symbols-outlined text-[14px] mr-1">conversion_path</span>
+                            8% conv.
+                        </div>
+</div>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/50 rounded-xl p-4 flex gap-4 hover:border-primary/30 transition-all cursor-pointer">
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0 bg-primary/5 flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Abstract colorful shopping bags" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcn7F7RHi496PJcGor8FpapCWZg6k1z-7vWCXAKEybjoLOkWUUsGYvjXmZ4r8ze-w1ISkDIxU6KX3vPxPhL1RHMyn9ljEodXDX9dLtmmrpGNwhg7cn_F-87CfUBOa21zEMQokp9zZ-SutKb_N7M1AYbCb4sTzBbOJ1IM8I0dVq5ZnohlVw63YiwhUFnz6Lb2-beWuZyk-Uq1IrnSKoJ1_yTl5n3UD72M7Q3352pHKcoYRL6fDcO3ie9G-TopazM8rpUrYCJyedYwCX"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-base leading-tight">Referral Bonus x2</h4>
+<span class="bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 text-[10px] font-bold px-2 py-0.5 rounded-full">LIMITED</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-xs mt-1">Double points for every new lead referral this month.</p>
+</div>
+<div class="flex items-center gap-4 mt-2">
+<div class="flex items-center text-[11px] text-slate-400">
+<span class="material-symbols-outlined text-[14px] mr-1">group</span>
+                            450 reach
+                        </div>
+<div class="flex items-center text-[11px] text-slate-400">
+<span class="material-symbols-outlined text-[14px] mr-1">conversion_path</span>
+                            12% conv.
+                        </div>
+</div>
+</div>
+</div>
+<!-- List Item 3 -->
+<div class="bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/50 rounded-xl p-4 flex gap-4 hover:border-primary/30 transition-all cursor-pointer">
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0 bg-primary/5 flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Close up of a credit card transaction" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOvhuQiiiBqC_aeNHPQrlKg8l3_kOGozd1maVeAgvaAGDnptqsA4Rt-YCGMdsHAltmeye7_Ewe-uqHp8KxC18_0090XToL0fyMfFJ-yEayoyHNYWKdcG4AStKonWv7CW3cHbCmoia0QqGWHGgXbwot1qpb22H9jrTLHW9boQl1dTAwtCQtsqveEaBYbr9pCiSw4QW20sjxPLsYjyutRfKtg74L0PKMrMffdeATV3ccRyEM6YviFg6z2HSQnPSLW8N6Jn9nVY2L0s2I"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-base leading-tight">First-Time Buyer Perk</h4>
+<span class="bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-[10px] font-bold px-2 py-0.5 rounded-full">ONGOING</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-xs mt-1">Free shipping and $10 credit on first order over $50.</p>
+</div>
+<div class="flex items-center gap-4 mt-2">
+<div class="flex items-center text-[11px] text-slate-400">
+<span class="material-symbols-outlined text-[14px] mr-1">group</span>
+                            3.8k reach
+                        </div>
+<div class="flex items-center text-[11px] text-slate-400">
+<span class="material-symbols-outlined text-[14px] mr-1">conversion_path</span>
+                            24% conv.
+                        </div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg border-t border-slate-200 dark:border-slate-800 px-4 pb-6 pt-2 flex justify-around items-center z-20">
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[26px]">home</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[26px]">group</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Leads</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<div class="relative">
+<span class="material-symbols-outlined text-[26px] filled-icon">local_offer</span>
+<div class="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full ring-2 ring-white dark:ring-slate-900"></div>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Promos</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[26px]">bar_chart</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Stats</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[26px]">settings</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Settings</span>
+</a>
+</nav>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

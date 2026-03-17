@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Product Detail - Click &amp; Collect</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<!-- Header Section -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center justify-between p-4 max-w-2xl mx-auto">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold leading-tight tracking-tight">Product Details</h2>
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">share</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="pt-20 pb-32 max-w-2xl mx-auto">
+<!-- Image Container -->
+<div class="@container px-4">
+<div class="w-full bg-slate-200 dark:bg-slate-800 aspect-square overflow-hidden rounded-xl bg-center bg-no-repeat bg-cover" data-alt="Premium golden pet vitamin bottle on white background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCHKhnhq8WVR710qXmQPp2AQGQHYDtHvxpN6HY9wvLgcsf2LTEB9AOy5dxnBL56tDROduZpMfQCWBvnCwglrQggRKVMQfDIp2UVuYHDL9kwLT6a9TrMOOMzMCzudOS7IW7dpU6cTFm3PlgBlUaBqv-n4SGxVkrs_qiIdothVK1aWttsPQjrvPwU_YwJB1o-zyiJ_wINs55V-D37sFt32e6iXnDNV3KMJcumv2C3e1QFPKDZ-5yQFNEcbjk47PwSGJ6l28N-TUfq4qje");'>
+</div>
+</div>
+<!-- Product Title & Price -->
+<div class="px-4 pt-6">
+<div class="flex justify-between items-start gap-4">
+<h1 class="text-2xl font-extrabold leading-tight tracking-tight flex-1">Premium Pet Vitamins - Multi-Benefit Formula</h1>
+<p class="text-2xl font-black text-primary">$24.99</p>
+</div>
+<p class="mt-1 text-sm text-slate-500 dark:text-slate-400">In Stock • Ships in 24 hours</p>
+</div>
+<!-- Rating Section -->
+<div class="flex flex-wrap gap-x-8 gap-y-4 p-4 mt-2 bg-primary/5 dark:bg-primary/10 rounded-xl mx-4">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<p class="text-3xl font-black leading-tight">4.8</p>
+<div class="flex text-primary">
+<span class="material-symbols-outlined fill-1" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined fill-1" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined fill-1" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined fill-1" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0">star</span>
+</div>
+</div>
+<p class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">128 Verified Reviews</p>
+</div>
+<div class="flex-1 min-w-[180px] space-y-1.5 py-1">
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold w-3">5</span>
+<div class="flex-1 h-1.5 rounded-full bg-primary/20 overflow-hidden">
+<div class="bg-primary h-full w-[80%] rounded-full"></div>
+</div>
+<span class="text-[10px] font-medium w-8 text-right">80%</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold w-3">4</span>
+<div class="flex-1 h-1.5 rounded-full bg-primary/20 overflow-hidden">
+<div class="bg-primary h-full w-[12%] rounded-full"></div>
+</div>
+<span class="text-[10px] font-medium w-8 text-right">12%</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold w-3">3</span>
+<div class="flex-1 h-1.5 rounded-full bg-primary/20 overflow-hidden">
+<div class="bg-primary h-full w-[5%] rounded-full"></div>
+</div>
+<span class="text-[10px] font-medium w-8 text-right">5%</span>
+</div>
+</div>
+</div>
+<!-- Quantity Selector -->
+<div class="px-4 py-6 border-b border-slate-200 dark:border-slate-800">
+<h3 class="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">Quantity</h3>
+<div class="flex items-center gap-4">
+<div class="flex items-center border border-slate-200 dark:border-slate-800 rounded-lg overflow-hidden h-12">
+<button class="px-4 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-lg">remove</span>
+</button>
+<div class="w-12 text-center font-bold text-lg">1</div>
+<button class="px-4 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+<div class="flex-1 text-sm text-slate-600 dark:text-slate-400">
+                    Max 10 per order
+                </div>
+</div>
+</div>
+<!-- Detailed Description -->
+<div class="px-4 py-6">
+<h3 class="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">Description</h3>
+<div class="space-y-4 text-slate-700 dark:text-slate-300 leading-relaxed">
+<p>
+                    Give your furry friend the gift of health with our Premium Multi-Benefit Vitamins. Formulated by veterinarians, these soft chews provide a comprehensive blend of essential nutrients.
+                </p>
+<ul class="space-y-2">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span>Glucosamine and Chondroitin for joint support</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span>Omega-3 fatty acids for a shiny coat and healthy skin</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span>Probiotics and enzymes for optimal digestive health</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span>Vitamins A, C, and E for immune system boosting</span>
+</li>
+</ul>
+<p>
+                    Suitable for dogs and cats of all ages and sizes. Proudly manufactured in the USA with globally sourced premium ingredients.
+                </p>
+</div>
+</div>
+<!-- Store Pickup Info -->
+<div class="mx-4 p-4 bg-slate-100 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700 flex items-center gap-4">
+<div class="size-10 bg-primary/20 flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-primary">store</span>
+</div>
+<div>
+<p class="text-sm font-bold">Pick up at Store</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Available at Downtown Pet Hub (2.4 miles)</p>
+</div>
+<button class="ml-auto text-primary text-xs font-bold uppercase tracking-wide">Change</button>
+</div>
+</main>
+<!-- Sticky Bottom Section -->
+<div class="fixed bottom-0 left-0 right-0 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 p-4 pb-8 z-50">
+<div class="max-w-2xl mx-auto flex gap-4">
+<button class="flex items-center justify-center size-14 border border-slate-200 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">favorite</span>
+</button>
+<button class="flex-1 bg-primary text-white h-14 rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:opacity-90 transition-opacity active:scale-[0.98]">
+<span class="material-symbols-outlined">shopping_bag</span>
+                Add to Cart
+            </button>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Public Sans", sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header Section -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-slate-200 dark:border-slate-800">
+<div class="text-slate-900 dark:text-slate-100 flex size-12 shrink-0 items-center justify-start cursor-pointer">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em] flex-1">Inbox &amp; Notifications</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 bg-transparent text-primary gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined text-2xl">done_all</span>
+</button>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="px-4 py-3">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full border border-slate-200 dark:border-slate-800">
+<div class="text-slate-400 flex items-center justify-center pl-4 bg-white dark:bg-slate-900 rounded-l-xl">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-slate-900 dark:text-slate-100 focus:outline-0 focus:ring-0 border-none bg-white dark:bg-slate-900 focus:border-none h-full placeholder:text-slate-400 px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Search messages and notifications" value=""/>
+</div>
+</label>
+</div>
+<!-- Filters -->
+<div class="flex gap-3 px-4 py-2 overflow-x-auto no-scrollbar">
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary px-5 shadow-sm">
+<p class="text-white text-sm font-semibold leading-normal">All</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-5 shadow-sm">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal">Promotions</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-5 shadow-sm">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal">System</p>
+</div>
+</div>
+<!-- Content Sections -->
+<div class="flex-1 px-4 pb-24">
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em] py-4">Today</h3>
+<div class="space-y-4">
+<!-- Rich Message Promotion -->
+<div class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-800">
+<div class="h-32 w-full bg-gradient-to-r from-primary to-orange-400 relative">
+<div class="absolute inset-0 flex items-center justify-center text-white/20">
+<span class="material-symbols-outlined text-7xl">local_offer</span>
+</div>
+</div>
+<div class="p-4">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary/10 px-2 py-0.5 rounded">Special Offer</span>
+<span class="text-xs text-slate-400">2h ago</span>
+</div>
+<h4 class="text-base font-bold text-slate-900 dark:text-slate-100 mb-1">20% Off Premium Grooming</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Treat your pet to a luxury spa day this weekend and save big!</p>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-2.5 rounded-lg transition-colors">Redeem Now</button>
+</div>
+</div>
+<!-- Replenishment Reminder -->
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 flex gap-4">
+<div class="size-12 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">shopping_basket</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<h4 class="text-sm font-bold text-slate-900 dark:text-slate-100">Running low!</h4>
+<span class="text-xs text-slate-400">4h ago</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400 mb-3">Your pet food is running low! Your last order was 28 days ago.</p>
+<div class="flex gap-2">
+<button class="flex-1 bg-primary text-white text-xs font-bold py-2 rounded-lg">Re-order</button>
+<button class="flex-1 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-xs font-bold py-2 rounded-lg">Alternatives</button>
+</div>
+</div>
+</div>
+<!-- Appointment Reminder -->
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 flex gap-4">
+<div class="size-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-blue-500">calendar_today</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<h4 class="text-sm font-bold text-slate-900 dark:text-slate-100">Upcoming Grooming</h4>
+<span class="text-xs text-slate-400">6h ago</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400 mb-3">Scheduled for tomorrow at 10:30 AM with Sarah at West End Clinic.</p>
+<div class="flex gap-2">
+<button class="flex-1 bg-primary/10 text-primary text-xs font-bold py-2 rounded-lg">Confirm</button>
+<button class="flex-1 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-xs font-bold py-2 rounded-lg">Reschedule</button>
+</div>
+</div>
+</div>
+<!-- Health Alert -->
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm border border-l-4 border-l-red-500 border-slate-200 dark:border-slate-800 flex gap-4">
+<div class="size-12 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-red-500">vaccines</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<h4 class="text-sm font-bold text-slate-900 dark:text-slate-100">Health Alert</h4>
+<span class="text-xs text-slate-400">Yesterday</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400">Vaccine due soon. Buddy's annual rabies vaccination is required by Oct 15th.</p>
+</div>
+</div>
+</div>
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em] py-6">Earlier This Week</h3>
+<div class="space-y-4 opacity-70">
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 flex gap-4">
+<div class="size-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-slate-500">check_circle</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<h4 class="text-sm font-bold text-slate-900 dark:text-slate-100">Order Delivered</h4>
+<span class="text-xs text-slate-400">3d ago</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400">Your order #CR-9042 has been successfully delivered to your front door.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation -->
+<div class="fixed bottom-0 w-full bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 px-4 pb-6 pt-2 flex gap-2 z-20">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined text-2xl">home</span>
+<p class="text-[10px] font-medium leading-normal tracking-tight">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined text-2xl">group</span>
+<p class="text-[10px] font-medium leading-normal tracking-tight">Leads</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined material-symbols-fill text-2xl">inbox</span>
+<p class="text-[10px] font-medium leading-normal tracking-tight">Inbox</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined text-2xl">task_alt</span>
+<p class="text-[10px] font-medium leading-normal tracking-tight">Tasks</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined text-2xl">menu</span>
+<p class="text-[10px] font-medium leading-normal tracking-tight">Menu</p>
+</a>
+</div>
+</div>
+</body></html>

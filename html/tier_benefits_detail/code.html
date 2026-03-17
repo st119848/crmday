@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tier Details - Membership App</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<!-- Header -->
+<header class="sticky top-0 z-10 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md p-4 border-b border-primary/10">
+<button class="text-slate-900 dark:text-slate-100 flex size-10 items-center justify-center rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold leading-tight tracking-tight flex-1 ml-2">Tier Details</h2>
+<button class="text-slate-900 dark:text-slate-100 flex size-10 items-center justify-center rounded-full hover:bg-primary/10">
+<span class="material-symbols-outlined">share</span>
+</button>
+</header>
+<main class="max-w-xl mx-auto pb-24">
+<!-- Current Tier Hero Section -->
+<section class="flex p-6 flex-col items-center">
+<div class="relative">
+<div class="bg-gradient-to-tr from-primary to-orange-300 aspect-square rounded-full min-h-32 w-32 flex items-center justify-center shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-white text-6xl">workspace_premium</span>
+</div>
+<div class="absolute -bottom-2 right-0 bg-primary text-white rounded-full p-1 border-4 border-background-light dark:border-background-dark">
+<span class="material-symbols-outlined text-sm block">check</span>
+</div>
+</div>
+<div class="mt-6 text-center">
+<h1 class="text-3xl font-bold tracking-tight">Gold Member</h1>
+<p class="text-primary font-medium text-sm uppercase tracking-widest mt-1">Current Tier</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-2">Member since February 2022</p>
+</div>
+</section>
+<!-- Progress to Next Tier -->
+<section class="mx-4 p-5 bg-white dark:bg-slate-900 rounded-xl border border-primary/10 shadow-sm">
+<div class="flex justify-between items-end mb-3">
+<div class="flex flex-col">
+<span class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase">Next Tier</span>
+<span class="text-base font-bold">Platinum</span>
+</div>
+<div class="text-right">
+<span class="text-lg font-bold text-primary">3,750</span>
+<span class="text-slate-400 font-medium">/ 5,000 pts</span>
+</div>
+</div>
+<div class="w-full h-3 bg-primary/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-500" style="width: 75%;"></div>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-xs mt-3 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">info</span>
+                1,250 points to unlock Platinum rewards
+            </p>
+</section>
+<!-- Tier Benefits List -->
+<section class="mt-8 px-4">
+<h3 class="text-lg font-bold mb-4 px-1">Gold Tier Benefits</h3>
+<div class="grid gap-3">
+<div class="flex items-center gap-4 p-4 bg-white dark:bg-slate-900 rounded-xl border border-primary/5">
+<div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-sm">2x Points Multiplier</p>
+<p class="text-xs text-slate-500">Earn double points on every purchase</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 bg-white dark:bg-slate-900 rounded-xl border border-primary/5">
+<div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">cake</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-sm">Exclusive Birthday Gift</p>
+<p class="text-xs text-slate-500">A special surprise delivered on your day</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 bg-white dark:bg-slate-900 rounded-xl border border-primary/5">
+<div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-sm">Free Express Shipping</p>
+<p class="text-xs text-slate-500">Unlimited free priority shipping on all orders</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 bg-white dark:bg-slate-900 rounded-xl border border-primary/5">
+<div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">support_agent</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-sm">Priority Support</p>
+<p class="text-xs text-slate-500">Skip the queue with 24/7 dedicated support</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Comparison Table -->
+<section class="mt-10 px-4 overflow-hidden">
+<h3 class="text-lg font-bold mb-4 px-1">Compare Tiers</h3>
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-primary/10 overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-primary/5">
+<th class="p-4 text-xs font-bold uppercase text-slate-500">Benefit</th>
+<th class="p-4 text-xs font-bold uppercase text-slate-500 text-center">Silver</th>
+<th class="p-4 text-xs font-bold uppercase text-primary text-center">Gold</th>
+<th class="p-4 text-xs font-bold uppercase text-slate-500 text-center">Plat</th>
+</tr>
+</thead>
+<tbody class="text-sm">
+<tr class="border-b border-primary/5">
+<td class="p-4 font-medium">Points Earn</td>
+<td class="p-4 text-center">1x</td>
+<td class="p-4 text-center text-primary font-bold">2x</td>
+<td class="p-4 text-center">3x</td>
+</tr>
+<tr class="border-b border-primary/5">
+<td class="p-4 font-medium">Birthday Gift</td>
+<td class="p-4 text-center text-slate-300"><span class="material-symbols-outlined">close</span></td>
+<td class="p-4 text-center text-primary font-bold"><span class="material-symbols-outlined">check_circle</span></td>
+<td class="p-4 text-center text-primary"><span class="material-symbols-outlined">check_circle</span></td>
+</tr>
+<tr class="border-b border-primary/5">
+<td class="p-4 font-medium">Shipping</td>
+<td class="p-4 text-center">Std.</td>
+<td class="p-4 text-center text-primary font-bold">Express</td>
+<td class="p-4 text-center">VIP</td>
+</tr>
+<tr class="border-b border-primary/5">
+<td class="p-4 font-medium">Early Access</td>
+<td class="p-4 text-center text-slate-300"><span class="material-symbols-outlined">close</span></td>
+<td class="p-4 text-center text-slate-300"><span class="material-symbols-outlined">close</span></td>
+<td class="p-4 text-center text-primary font-bold"><span class="material-symbols-outlined">check_circle</span></td>
+</tr>
+<tr>
+<td class="p-4 font-medium">Concierge</td>
+<td class="p-4 text-center text-slate-300"><span class="material-symbols-outlined">close</span></td>
+<td class="p-4 text-center text-slate-300"><span class="material-symbols-outlined">close</span></td>
+<td class="p-4 text-center text-primary font-bold"><span class="material-symbols-outlined">check_circle</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Action Button -->
+<div class="mt-8 px-4">
+<button class="w-full bg-primary text-white py-4 rounded-xl font-bold shadow-lg shadow-primary/30 active:scale-[0.98] transition-transform">
+                Redeem Rewards
+            </button>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 z-20 bg-background-light dark:bg-background-dark border-t border-primary/10 pb-6 pt-3 px-6 flex justify-between items-center">
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">card_giftcard</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Rewards</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">workspace_premium</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Tiers</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Profile</span>
+</a>
+</nav>
+</body></html>

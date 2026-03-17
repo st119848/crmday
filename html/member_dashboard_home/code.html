@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff6600",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#23170f",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<title>Member Dashboard - Super CRM</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="max-w-md mx-auto bg-white dark:bg-stone-900 min-h-screen flex flex-col shadow-xl">
+<!-- Top Header -->
+<header class="flex items-center justify-between px-6 pt-6 pb-4 bg-white dark:bg-stone-900 sticky top-0 z-10">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20 bg-primary/10 flex items-center justify-center">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="Close up portrait of a smiling young professional" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ4_tW-DWG5jaNJMKI5DrcjrW66eJ1f0WISxxUx0asYAImOcgTES8999tOEr1dwFcYDJU4ItDNa-FXM_LnAtFVoNq0pkmgu4u-DsBKAFEzNOofft3imyIa1g3kuUiNfYNQN6qbT2U6GWrBbn3zzGM_0NjiRddVQjrLvDiiEY_zdok0FyI5J5Na-3fe4wmZtxe792oEpb-YInNEmmmK2AE00ehr9O1g56So3z8LP12FRzaw5twGa6Ps58nABE5r4yVegQFZdEQltZjL"/>
+</div>
+<div>
+<p class="text-xs text-slate-500 dark:text-stone-400 font-medium">Good Morning,</p>
+<h1 class="text-lg font-bold leading-tight">Alex Johnson</h1>
+</div>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-stone-800 text-slate-600 dark:text-stone-300">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<!-- Main Content Scrollable Area -->
+<main class="flex-1 overflow-y-auto px-6 pb-24">
+<!-- Virtual Member Card -->
+<div class="mt-4">
+<div class="relative overflow-hidden rounded-xl p-6 text-white shadow-2xl bg-gradient-to-br from-primary to-orange-700 h-52 flex flex-col justify-between" data-alt="Abstract orange flowing energy lines background">
+<!-- Card Background Pattern Decor -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 blur-2xl"></div>
+<div class="absolute bottom-0 left-0 w-24 h-24 bg-black/10 rounded-full -ml-12 -mb-12 blur-xl"></div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-xs font-medium opacity-80 uppercase tracking-widest">Membership Card</p>
+<h2 class="text-2xl font-bold mt-1">Gold Member</h2>
+</div>
+<div class="bg-white p-1 rounded-lg">
+<img alt="QR" class="w-12 h-12 opacity-90" data-alt="A small clean QR code representing member ID" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoaS0TjrvjKRnBvZuopGOIc5FzGocjm56GSXF9H0eRUjbkh7ZYDhQpGKAxbCCmCYRZp07AuZOpmDmNiXjYBT_bWiiqPeGdeMD4aqYE0W3QaYfIOaLxp9G3F5_0gXwVvkeQj0P-PRL1x4WnfdGWaKAtYbtOSoh7IVv_YzkYJa9D2i_1R21X4EaoCPhoHWVc2u3ISI3fgfRfoeBs37Zmodlie11fxs6N27JvdNkuxdKOocCBZ34p-Q8Uvh8m3yb9J1F8_AJjMSl_KYuz"/>
+</div>
+</div>
+<div class="flex justify-between items-end">
+<div class="space-y-1">
+<p class="text-sm font-medium opacity-90">Alex Johnson</p>
+<p class="text-[10px] font-mono opacity-70 tracking-tighter">ID: 8829-3049-1120</p>
+</div>
+<button class="bg-white/20 hover:bg-white/30 backdrop-blur-md px-4 py-2 rounded-full text-xs font-bold transition-all border border-white/30">
+                            VIEW QR
+                        </button>
+</div>
+</div>
+</div>
+<!-- Points & Status -->
+<div class="mt-8 bg-slate-50 dark:bg-stone-800/50 rounded-xl p-5 border border-slate-100 dark:border-stone-800">
+<div class="flex justify-between items-center mb-4">
+<div>
+<p class="text-sm text-slate-500 dark:text-stone-400 font-medium">Current Points</p>
+<p class="text-3xl font-black text-primary mt-1">1,250 <span class="text-sm font-bold text-slate-400 uppercase">pts</span></p>
+</div>
+<div class="bg-primary/10 text-primary p-2 rounded-lg">
+<span class="material-symbols-outlined text-3xl">stars</span>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-bold">
+<span class="text-slate-600 dark:text-stone-300 uppercase tracking-wider">Next Tier: Platinum</span>
+<span class="text-primary">500 pts left</span>
+</div>
+<div class="h-3 bg-slate-200 dark:bg-stone-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[71%] rounded-full shadow-[0_0_8px_rgba(255,102,0,0.4)]"></div>
+</div>
+<p class="text-[11px] text-slate-400 dark:text-stone-500 italic text-center pt-1">You're in the top 15% of members this month!</p>
+</div>
+</div>
+<!-- Quick Menu -->
+<div class="mt-8">
+<div class="grid grid-cols-4 gap-4">
+<div class="flex flex-col items-center gap-2">
+<div class="w-14 h-14 rounded-full bg-orange-50 dark:bg-stone-800 border border-orange-100 dark:border-stone-700 flex items-center justify-center text-primary shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-2xl">card_giftcard</span>
+</div>
+<span class="text-[11px] font-bold text-slate-600 dark:text-stone-300">Redeem</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-14 h-14 rounded-full bg-orange-50 dark:bg-stone-800 border border-orange-100 dark:border-stone-700 flex items-center justify-center text-primary shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-2xl">storefront</span>
+</div>
+<span class="text-[11px] font-bold text-slate-600 dark:text-stone-300">E-Store</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-14 h-14 rounded-full bg-orange-50 dark:bg-stone-800 border border-orange-100 dark:border-stone-700 flex items-center justify-center text-primary shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-2xl">task_alt</span>
+</div>
+<span class="text-[11px] font-bold text-slate-600 dark:text-stone-300">Missions</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-14 h-14 rounded-full bg-orange-50 dark:bg-stone-800 border border-orange-100 dark:border-stone-700 flex items-center justify-center text-primary shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-2xl">account_balance_wallet</span>
+</div>
+<span class="text-[11px] font-bold text-slate-600 dark:text-stone-300">My Wallet</span>
+</div>
+</div>
+</div>
+<!-- Personalized Banners (Carousel) -->
+<div class="mt-8 mb-4">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-base font-bold text-slate-800 dark:text-stone-100">Recommended for You</h3>
+<a class="text-xs font-bold text-primary" href="#">View All</a>
+</div>
+<div class="flex gap-4 overflow-x-auto pb-4 no-scrollbar -mx-6 px-6">
+<!-- Banner 1 -->
+<div class="min-w-[280px] h-36 rounded-xl relative overflow-hidden flex-shrink-0 bg-slate-200" data-alt="Close up of a freshly brewed cappuccino with latte art">
+<div class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent p-5 flex flex-col justify-center">
+<span class="bg-primary text-white text-[10px] font-black px-2 py-1 rounded w-fit mb-2">HOT DEAL</span>
+<h4 class="text-white font-bold text-lg leading-tight">Birthday Reward:<br/>Free Coffee</h4>
+<p class="text-white/80 text-xs mt-1">Claim your annual treat</p>
+</div>
+<img alt="Promo" class="w-full h-full object-cover -z-10 absolute inset-0" data-alt="High quality close up of aromatic coffee beans and cup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkJvw_YnPiuUIDZHO_MMlaq62TclNi-GLzQR4Q20Balz46LtlU5uzPX06rZyaQmFXlb1bcc7LtKa9rLjLgzof19AhyE6VRW1UtCBfBF03UZmLlSrVwUcDSw8BlZTi5NqLXomjqzhXP__Mik2-qvrSk3DJm61BmB73cjyoBFa7DGAdAx2R-pqR36Ez4VDxNCV61NV5bj5GMEqnM44UhMWVtQykainbZHJLS-EnBzLs8Ck8S13DQ4vJjpOoKw5xgXdVyIh2BLHUoaj0y"/>
+</div>
+<!-- Banner 2 -->
+<div class="min-w-[280px] h-36 rounded-xl relative overflow-hidden flex-shrink-0 bg-slate-200" data-alt="Modern retail store shelf with premium skincare products">
+<div class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent p-5 flex flex-col justify-center">
+<span class="bg-blue-600 text-white text-[10px] font-black px-2 py-1 rounded w-fit mb-2">LIMITED TIME</span>
+<h4 class="text-white font-bold text-lg leading-tight">Buy 1 Get 1<br/>On All Skincare</h4>
+<p class="text-white/80 text-xs mt-1">Ends this Sunday</p>
+</div>
+<img alt="Promo" class="w-full h-full object-cover -z-10 absolute inset-0" data-alt="Artistic arrangement of luxury cosmetic bottles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8nIcGx-Pv8dcmAKzR0w_yHn3tX5HdI2CGE1zv6MGjsdr-grvMS2CTr_6GrASFlncyLcvXRW_5Ht1vXVK9WWU09PiIHxZoKvJJumOy8SvS9SN1cw1BIj2wx5lsHbGLS8SDZLldUPDJrNe-elEIg13DgJtBYaxJosTjsLDoijNT180na8bUlFVvreAPFAYdJARwprTk2HHDeEu60eqh8zPzZTAkN7vyECTX9ytF4AzPrmh3lOv8iH0abbYLvJNckvDhwJp9OrUwRlm5"/>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white/95 dark:bg-stone-900/95 backdrop-blur-md border-t border-slate-100 dark:border-stone-800 px-2 py-2">
+<div class="flex items-center justify-around">
+<a class="flex flex-col items-center gap-1 p-2 text-primary" href="#">
+<span class="material-symbols-outlined text-2xl fill-[1]">home</span>
+<span class="text-[10px] font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-slate-400 dark:text-stone-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">featured_seasonal_and_gifts</span>
+<span class="text-[10px] font-medium">Rewards</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-slate-400 dark:text-stone-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">shopping_bag</span>
+<span class="text-[10px] font-medium">Store</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-slate-400 dark:text-stone-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">assignment</span>
+<span class="text-[10px] font-medium">Missions</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-slate-400 dark:text-stone-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">account_circle</span>
+<span class="text-[10px] font-medium">Account</span>
+</a>
+</div>
+</nav>
+</div>
+<style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        
+        /* Material symbols fill adjustment for active state */
+        .fill-\[1\] {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</body></html>

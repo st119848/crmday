@@ -1,0 +1,59 @@
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onboarding - LINE LIFF Super CRM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Noto Sans Thai', sans-serif; background-color: #f5f5f7; }
+        .btn-primary { background-color: #ff6600; color: white; }
+        .text-primary { color: #ff6600; }
+        .bg-grey-dark { background-color: #4A4A4A; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <!-- Step Indicator -->
+    <div class="px-6 pt-10 pb-4 flex justify-between items-center">
+        <div class="flex space-x-2">
+            <div class="h-2 w-8 rounded-full bg-orange-500"></div>
+            <div class="h-2 w-8 rounded-full bg-gray-300"></div>
+            <div class="h-2 w-8 rounded-full bg-gray-300"></div>
+        </div>
+        <span class="text-xs text-gray-500 font-medium">ขั้นตอนที่ 1 จาก 3</span>
+    </div>
+
+    <!-- Onboarding: LINE Login / Authorization -->
+    <div id="step-auth" class="px-6 flex flex-col items-center text-center mt-8">
+        <div class="w-24 h-24 bg-orange-100 rounded-3xl flex items-center justify-center mb-6">
+            <svg class="w-12 h-12 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"></path></svg>
+        </div>
+        <h1 class="text-2xl font-bold text-gray-800 mb-2">ยินดีต้อนรับสู่ Super CRM</h1>
+        <p class="text-gray-600 mb-8 px-4">เชื่อมต่อบัญชี LINE ของคุณเพื่อสะสมแต้ม แลกของรางวัล และรับสิทธิพิเศษมากมาย</p>
+        
+        <button class="w-full py-4 bg-[#06C755] text-white font-bold rounded-2xl flex items-center justify-center mb-4 shadow-lg active:scale-95 transition-transform">
+            <img src="https://itp1.itopfile.com/ImageServer/z_itp_17042024u1ri/265/0/Linez-z1072197030672.png" class="w-6 h-6 mr-3 invert brightness-0" alt="Line Logo">
+            เข้าใช้งานด้วย LINE
+        </button>
+    </div>
+
+    <!-- PDPA Consent (Implicitly shown as a modal or next view) -->
+    <div id="step-pdpa" class="px-6 py-6 bg-white rounded-t-[3rem] mt-auto shadow-2xl">
+        <h2 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+            <svg class="w-5 h-5 mr-2 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            นโยบายความเป็นส่วนตัว (PDPA)
+        </h2>
+        <div class="text-sm text-gray-600 max-height-[150px] overflow-y-auto bg-gray-50 p-4 rounded-xl mb-4 leading-relaxed">
+            เราให้ความสำคัญกับข้อมูลส่วนบุคคลของคุณ เพื่อนำมาวิเคราะห์พฤติกรรมการซื้อและนำเสนอโปรโมชันที่ตรงใจคุณที่สุด... 
+            คุณสามารถเลือกยินยอมการรับข้อมูลข่าวสารทางการตลาดได้ในหน้าตั้งค่า
+        </div>
+        <div class="flex items-start mb-6">
+            <input type="checkbox" id="marketing-consent" class="mt-1 mr-3 w-5 h-5 border-gray-300 rounded text-orange-500 focus:ring-orange-500">
+            <label for="marketing-consent" class="text-sm text-gray-700">ฉันยินยอมให้เก็บข้อมูลเพื่อรับสิทธิประโยชน์และข่าวสารทางการตลาด</label>
+        </div>
+        <button class="w-full py-4 btn-primary font-bold rounded-2xl shadow-lg shadow-orange-200 active:scale-95 transition-transform">
+            ยอมรับและดำเนินการต่อ
+        </button>
+    </div>
+</body>
+</html>

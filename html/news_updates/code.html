@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>News Feed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen w-full flex-col max-w-md mx-auto bg-background-light dark:bg-background-dark shadow-xl">
+<!-- Header -->
+<header class="sticky top-0 z-10 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-4 border-b border-primary/10">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">arrow_back</span>
+</button>
+<h1 class="ml-2 text-xl font-bold leading-tight tracking-tight flex-1">Latest News</h1>
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">search</span>
+</button>
+</header>
+<!-- Categories / Filters -->
+<div class="flex gap-2 overflow-x-auto px-4 py-3 no-scrollbar">
+<button class="bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap">All News</button>
+<button class="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap border border-primary/20">Technology</button>
+<button class="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap border border-primary/20">Business</button>
+<button class="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap border border-primary/20">Science</button>
+<button class="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap border border-primary/20">Health</button>
+</div>
+<!-- News List -->
+<main class="flex-1 px-4 py-2 space-y-4 pb-24">
+<!-- Featured Item -->
+<div class="group relative overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800 h-64 flex flex-col justify-end p-4">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Modern office with laptops and code on screens" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDA7RTxcFJQmBwut1IJyomcAzCW49-aW8GwMCIc0k9ev5_zKOeY_Y2krzPChkpGM3PT0WaIGcl1Q1ip8bREpfefBsqhfatOmdqp90yGidhpOlcrGegED01SjGCq1kRVP6H0rKtqnbTke3vJHNktEfdrcY-FWDhuQYD9eH5y8bob12V4bdKeAVWUT9vX_SBj85BqU7Hagek6iOYQkXqVqhUZclwe0XtdRP4Ev0Q-8zPbTQoe7e_pMdwKpM5jM7IUu94Mo0j5rlYy7_t_')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="relative z-10">
+<span class="bg-primary text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-sm">Featured</span>
+<h2 class="text-white text-lg font-bold mt-2 leading-snug">Global markets see record growth in tech sector</h2>
+<p class="text-white/80 text-xs mt-1">2 hours ago • By Sarah Jenkins</p>
+</div>
+</div>
+<!-- Standard List Items -->
+<div class="flex items-start gap-4 py-3 border-b border-primary/5">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-24 shrink-0 shadow-sm" data-alt="Solar panels on a green field under blue sky" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCgXSGmN1q6fYk5gWSr8d7TFTuCjZIbhsMn8ywigj1E50E251LvgDsPbzg_BWTxkTfaXHmQ5sTqKDHBnscwYX_xddMbB7yU6w8wTpshEQrpVA0S0cC67RIIaSsZqu9jeCNW-rwe-Zc3zrJsLHDSa-zwheDUk7TdPXMH1uCrXTOxKX1b6Xf_kL1bx5Bgn6pyh7yxP5PgW_vYN9eS75Ql-JHK4I4fIHu5v6diraUWI7Q6KmiNGoz9UQRnuqM8mOiuE6E58u0EXqMzZVB4')"></div>
+<div class="flex flex-col justify-between flex-1 py-0.5">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="text-primary text-[10px] font-bold uppercase tracking-widest">Energy</span>
+<span class="text-slate-500 dark:text-slate-400 text-xs">4h ago</span>
+</div>
+<h3 class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight line-clamp-2">New sustainable energy breakthrough announced</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-snug line-clamp-1 mt-1">Researchers find more efficient way to store solar energy.</p>
+</div>
+</div>
+</div>
+<div class="flex items-start gap-4 py-3 border-b border-primary/5">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-24 shrink-0 shadow-sm" data-alt="Lush green urban community garden with plants" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDdSuatu9m2UBVRXtfX6zsTSNdW_8vDJqc0DPSmexsXQ_jwa86Zx28kF0jI-sfE0DLCsCp5UgvQ0udV2IxUbgjc0S9nbgDskqRLjX1OdlF7w5DOf6V0pw9zhTYMm3qOgK_aAvA9fdHFAxX5S4ItYzBGdDtKT7RQILsu08BP-F0qmdPN11cfMp_YWP5jFCreTJRJ1fo4kiDv-3qOTwbvM6MK0ZmFa5XE7RFteKK2EdA6ISJc0NcJxPx0omB94ap8dZ5QCZ_Z1jjuUZPA')"></div>
+<div class="flex flex-col justify-between flex-1 py-0.5">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="text-primary text-[10px] font-bold uppercase tracking-widest">Environment</span>
+<span class="text-slate-500 dark:text-slate-400 text-xs">6h ago</span>
+</div>
+<h3 class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight line-clamp-2">Local community garden wins national award</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-snug line-clamp-1 mt-1">The project has transformed urban space into a green oasis.</p>
+</div>
+</div>
+</div>
+<div class="flex items-start gap-4 py-3 border-b border-primary/5">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-24 shrink-0 shadow-sm" data-alt="Close up of stock market charts on a screen" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAB43XE7Snj-0XNx2Btnq0TnPphkJMXlo76Q9e2V0mjJ8d_ceO0m1b2M9DD_9fHUUTJYXNNwHCvTObgq1SN4mQy1kalKiKME5lVk0eHVfy5XljCTyzSoqTDiL3Z4GeHsasu_3lC9Mel-Xfpqn_DolGO7t7uQ-sWVpid8o2qEPEPmvj7eWKnToEjMOkCMzM3WZGzUda_4z-gv6PhVkkdxLLTiFLVuRGyXesUpV6KHjNTRRjMdwa7WRXaVVH0_uzA2mh2DPsLH0l_c0KM')"></div>
+<div class="flex flex-col justify-between flex-1 py-0.5">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="text-primary text-[10px] font-bold uppercase tracking-widest">Finance</span>
+<span class="text-slate-500 dark:text-slate-400 text-xs">8h ago</span>
+</div>
+<h3 class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight line-clamp-2">Startups navigating the new economic landscape</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-snug line-clamp-1 mt-1">Founders shift focus to profitability over rapid growth.</p>
+</div>
+</div>
+</div>
+<div class="flex items-start gap-4 py-3 border-b border-primary/5">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-24 shrink-0 shadow-sm" data-alt="Digital representation of artificial intelligence neural networks" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA3y3I2NvOybaAFSzhQcNoaZNojXLlpfg8b1c8MyDFIhwPa-rGcszClpEAfy2x1yb0zpZuK7Z4R71YTJvcmu636bLA9UV3kbpHrNWGzubuZiCrao5Xd8JAsnEAIVDmclAp4NRhC8RVLv0LKnTQ52whOv3N6hPv9HSKROzYGQjT9ol-pWUKEqzaQAwtDNh-NHuO9niK2tgFOYOE8zXmPsazwyOUInYd4iwSnU9qdBlrNAVEcr4Ta7RR3FWPrFFQkXwMl82_UY6bZlYEi')"></div>
+<div class="flex flex-col justify-between flex-1 py-0.5">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="text-primary text-[10px] font-bold uppercase tracking-widest">AI</span>
+<span class="text-slate-500 dark:text-slate-400 text-xs">10h ago</span>
+</div>
+<h3 class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight line-clamp-2">AI ethics board releases new safety guidelines</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-snug line-clamp-1 mt-1">A collaborative effort to standardize responsible AI development.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md border-t border-primary/10 bg-background-light dark:bg-background-dark pb-safe-area-inset-bottom">
+<div class="flex h-16 items-center justify-around px-2">
+<a class="flex flex-col items-center justify-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">home</span>
+<p class="text-slate-500 dark:text-slate-400 text-[10px] font-medium leading-none">Home</p>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-primary fill-1">newspaper</span>
+<p class="text-primary text-[10px] font-bold leading-none">News</p>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">explore</span>
+<p class="text-slate-500 dark:text-slate-400 text-[10px] font-medium leading-none">Discover</p>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">person</span>
+<p class="text-slate-500 dark:text-slate-400 text-[10px] font-medium leading-none">Profile</p>
+</a>
+</div>
+</nav>
+</div>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .pb-safe-area-inset-bottom {
+            padding-bottom: env(safe-area-inset-bottom, 0.5rem);
+        }
+        .fill-1 {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</body></html>

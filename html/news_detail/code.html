@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>News Detail</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md p-4 justify-between border-b border-slate-200 dark:border-slate-800">
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">Article</h2>
+</header>
+<main class="flex-1">
+<div class="@container max-w-4xl mx-auto">
+<div class="@[480px]:px-4 @[480px]:py-4">
+<div class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden bg-slate-200 dark:bg-slate-800 @[480px]:rounded-xl min-h-[300px] md:min-h-[450px]" data-alt="Wide shot of a modern city skyline at sunset" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDXH7jxvERF4fqmk9Gi88TxTZ4IfsSIjkCnxQlMFxTQnqeiYbh7kSA1oBkLfEd2K9ZDKLywn3UzM5BzqkWp5JB0_pyQq5MOHn5rYBJpomdirVH6uAiyXdWK0NkGBZ8kkKSoxthsi4fzpVEZbY4Y7DAlM7V5U8mXTztdR3zj3gs2HIlNIN-I2lKtjL1wVdn1A3Gb0rAmMa3biFgokMuXvKxij4hyNBT_aTPe1VfzBCzTHxHHMVqoH6KHzyniQsQqeI7wn2oz1qWCggGG");'>
+</div>
+</div>
+<article class="px-4 py-6 md:px-8">
+<div class="flex items-center gap-2 mb-4">
+<span class="bg-primary/10 text-primary text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">World News</span>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Published 2 hours ago • 5 min read</p>
+</div>
+<h1 class="text-slate-900 dark:text-slate-100 tracking-tight text-[28px] md:text-[40px] font-bold leading-tight pb-6">
+                        The Future of Sustainable Urban Development in Global Metropolises
+                    </h1>
+<div class="flex items-center justify-between py-6 border-y border-slate-200 dark:border-slate-800 mb-8">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-primary flex items-center justify-center text-white font-bold">JD</div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-slate-100">Jane Doe</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Senior Correspondent</p>
+</div>
+</div>
+<button class="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-full font-medium hover:bg-primary/90 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-sm">share</span>
+<span>Share</span>
+</button>
+</div>
+<div class="prose prose-slate dark:prose-invert max-w-none space-y-6 text-slate-700 dark:text-slate-300 leading-relaxed text-lg">
+<p>
+                            Across the globe, cities are facing unprecedented challenges as they balance rapid population growth with the urgent need for environmental sustainability. From Singapore's vertical gardens to Amsterdam's extensive cycling infrastructure, the blueprint for the city of the future is being drafted today.
+                        </p>
+<p>
+                            "The transition to green urban spaces is no longer a luxury, but a necessity," says Dr. Elena Vance, an urban planning expert at the Global Cities Institute. "We are seeing a paradigm shift where natural ecosystems are being integrated into the core architecture of our metropolitan areas."
+                        </p>
+<blockquote class="border-l-4 border-primary pl-4 italic text-slate-900 dark:text-slate-100 font-medium py-2">
+                            "Sustainable development is about creating resilience against the climate changes we can no longer avoid while mitigating the impacts of future growth."
+                        </blockquote>
+<p>
+                            The integration of smart technology is also playing a pivotal role. IoT-enabled energy grids, automated waste management systems, and AI-driven public transport are optimizing resource consumption at an unprecedented scale. However, the human element remains at the center of these developments.
+                        </p>
+<p>
+                            As we look toward 2030, the focus is shifting toward '15-minute cities'—where all essential services are within a short walk or bike ride from home. This model not only reduces carbon emissions but significantly improves the quality of life for urban residents by fostering stronger community bonds.
+                        </p>
+</div>
+<div class="mt-12 flex flex-wrap gap-2">
+<span class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-3 py-1 rounded-lg text-sm font-medium">#Sustainability</span>
+<span class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-3 py-1 rounded-lg text-sm font-medium">#UrbanPlanning</span>
+<span class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-3 py-1 rounded-lg text-sm font-medium">#Technology</span>
+</div>
+</article>
+</div>
+</main>
+<footer class="mt-auto">
+<div class="flex gap-2 border-t border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark px-4 pb-6 pt-2">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined fill-1">home</span>
+</div>
+<p class="text-xs font-medium leading-normal">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">search</span>
+</div>
+<p class="text-xs font-medium leading-normal">Explore</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">bookmark</span>
+</div>
+<p class="text-xs font-medium leading-normal">Saved</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">notifications</span>
+</div>
+<p class="text-xs font-medium leading-normal">Alerts</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">person</span>
+</div>
+<p class="text-xs font-medium leading-normal">Profile</p>
+</a>
+</div>
+</footer>
+</div>
+</body></html>

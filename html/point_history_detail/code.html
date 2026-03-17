@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<title>Point History</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full max-w-md mx-auto flex-col overflow-x-hidden border-x border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark">
+<!-- Header -->
+<div class="flex items-center p-4 pb-2 justify-between sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md z-10">
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">arrow_back</span>
+</button>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">Point History</h2>
+</div>
+<!-- Total Balance Card -->
+<div class="flex flex-wrap gap-4 p-4">
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 bg-primary text-white shadow-lg shadow-primary/20">
+<p class="text-white/80 text-sm font-medium leading-normal">Total Balance</p>
+<div class="flex items-baseline gap-2">
+<p class="tracking-light text-3xl font-bold leading-tight">2,450</p>
+<p class="text-white/90 text-sm font-bold uppercase tracking-wider">pts</p>
+</div>
+</div>
+</div>
+<!-- Date Range Filter -->
+<div class="px-4 pt-4">
+<h3 class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight tracking-[-0.015em] mb-3">Filter by Date</h3>
+<div class="flex flex-col gap-0.5 bg-white dark:bg-slate-900/50 rounded-xl p-2 border border-slate-200 dark:border-slate-800">
+<div class="flex items-center p-1 justify-between mb-2">
+<button class="flex size-8 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<p class="text-slate-900 dark:text-slate-100 text-sm font-bold leading-tight flex-1 text-center">October 2023</p>
+<button class="flex size-8 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-7 gap-y-1">
+<p class="text-slate-400 dark:text-slate-500 text-[11px] font-bold uppercase flex h-8 w-full items-center justify-center">S</p>
+<p class="text-slate-400 dark:text-slate-500 text-[11px] font-bold uppercase flex h-8 w-full items-center justify-center">M</p>
+<p class="text-slate-400 dark:text-slate-500 text-[11px] font-bold uppercase flex h-8 w-full items-center justify-center">T</p>
+<p class="text-slate-400 dark:text-slate-500 text-[11px] font-bold uppercase flex h-8 w-full items-center justify-center">W</p>
+<p class="text-slate-400 dark:text-slate-500 text-[11px] font-bold uppercase flex h-8 w-full items-center justify-center">T</p>
+<p class="text-slate-400 dark:text-slate-500 text-[11px] font-bold uppercase flex h-8 w-full items-center justify-center">F</p>
+<p class="text-slate-400 dark:text-slate-500 text-[11px] font-bold uppercase flex h-8 w-full items-center justify-center">S</p>
+<button class="h-8 w-full text-slate-400 text-xs font-medium col-start-1 flex items-center justify-center opacity-30">27</button>
+<button class="h-8 w-full text-slate-400 text-xs font-medium flex items-center justify-center opacity-30">28</button>
+<button class="h-8 w-full text-slate-400 text-xs font-medium flex items-center justify-center opacity-30">29</button>
+<button class="h-8 w-full text-slate-400 text-xs font-medium flex items-center justify-center opacity-30">30</button>
+<button class="h-8 w-full text-slate-900 dark:text-slate-100 text-xs font-medium flex items-center justify-center">1</button>
+<button class="h-8 w-full text-slate-900 dark:text-slate-100 text-xs font-medium flex items-center justify-center">2</button>
+<button class="h-8 w-full text-slate-900 dark:text-slate-100 text-xs font-medium flex items-center justify-center">3</button>
+<button class="h-8 w-full text-slate-900 dark:text-slate-100 text-xs font-medium flex items-center justify-center">4</button>
+<button class="h-8 w-full bg-primary/20 text-primary rounded-l-full text-xs font-bold flex items-center justify-center">5</button>
+<button class="h-8 w-full bg-primary/20 text-primary text-xs font-bold flex items-center justify-center">6</button>
+<button class="h-8 w-full bg-primary/20 text-primary text-xs font-bold flex items-center justify-center">7</button>
+<button class="h-8 w-full bg-primary/20 text-primary text-xs font-bold flex items-center justify-center">8</button>
+<button class="h-8 w-full bg-primary text-white rounded-full text-xs font-bold flex items-center justify-center shadow-sm">9</button>
+<button class="h-8 w-full text-slate-900 dark:text-slate-100 text-xs font-medium flex items-center justify-center">10</button>
+</div>
+</div>
+</div>
+<!-- Transactions Header -->
+<div class="px-4 pb-2 pt-6 flex items-center justify-between">
+<h3 class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight tracking-[-0.015em]">Transactions</h3>
+<button class="text-primary text-xs font-bold uppercase tracking-wider">Clear All</button>
+</div>
+<!-- Transaction List -->
+<div class="flex flex-col gap-1 p-4 pt-0">
+<!-- Earn Item -->
+<div class="flex items-center gap-4 py-4 border-b border-slate-100 dark:border-slate-800">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400">
+<span class="material-symbols-outlined">add_circle</span>
+</div>
+<div class="flex flex-1 flex-col">
+<p class="text-slate-900 dark:text-slate-100 text-sm font-bold">In-store Purchase</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Oct 12, 2023 • Earned</p>
+</div>
+<div class="flex flex-col items-end">
+<p class="text-green-600 dark:text-green-400 text-sm font-bold">+120 pts</p>
+</div>
+</div>
+<!-- Redeem Item -->
+<div class="flex items-center gap-4 py-4 border-b border-slate-100 dark:border-slate-800">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">shopping_cart_checkout</span>
+</div>
+<div class="flex flex-1 flex-col">
+<p class="text-slate-900 dark:text-slate-100 text-sm font-bold">Coffee Reward</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Oct 09, 2023 • Redeemed</p>
+</div>
+<div class="flex flex-col items-end">
+<p class="text-primary text-sm font-bold">-500 pts</p>
+</div>
+</div>
+<!-- Earn Item -->
+<div class="flex items-center gap-4 py-4 border-b border-slate-100 dark:border-slate-800">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400">
+<span class="material-symbols-outlined">stars</span>
+</div>
+<div class="flex flex-1 flex-col">
+<p class="text-slate-900 dark:text-slate-100 text-sm font-bold">Bonus Birthday Points</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Oct 05, 2023 • Earned</p>
+</div>
+<div class="flex flex-col items-end">
+<p class="text-green-600 dark:text-green-400 text-sm font-bold">+50 pts</p>
+</div>
+</div>
+<!-- Earn Item -->
+<div class="flex items-center gap-4 py-4 border-b border-slate-100 dark:border-slate-800">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400">
+<span class="material-symbols-outlined">add_circle</span>
+</div>
+<div class="flex flex-1 flex-col">
+<p class="text-slate-900 dark:text-slate-100 text-sm font-bold">Online Order #8821</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Sep 28, 2023 • Earned</p>
+</div>
+<div class="flex flex-col items-end">
+<p class="text-green-600 dark:text-green-400 text-sm font-bold">+85 pts</p>
+</div>
+</div>
+<!-- Redeem Item -->
+<div class="flex items-center gap-4 py-4 border-b border-slate-100 dark:border-slate-800">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">confirmation_number</span>
+</div>
+<div class="flex flex-1 flex-col">
+<p class="text-slate-900 dark:text-slate-100 text-sm font-bold">Movie Ticket Voucher</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Sep 20, 2023 • Redeemed</p>
+</div>
+<div class="flex flex-col items-end">
+<p class="text-primary text-sm font-bold">-1,200 pts</p>
+</div>
+</div>
+</div>
+<!-- Footer Padding -->
+<div class="h-20 bg-transparent"></div>
+</div>
+</body></html>
