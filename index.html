@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
@@ -5,108 +6,661 @@
     <title>CRM Day - รายการหน้าหน้าจอระบบ</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"  />
-    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": {
+                            DEFAULT: "#ff6600",
+                            50: "#fff5ed",
+                            100: "#ffe8d4",
+                            200: "#ffcba7",
+                            300: "#ffa87a",
+                            400: "#ff8b57",
+                            500: "#ff6600",
+                            600: "#e55c00",
+                            700: "#c24e00",
+                            800: "#a34000",
+                            900: "#853500",
+                        },
+                        "background-light": "#faf8f7",
+                        "background-dark": "#1a1410",
+                    },
+                    fontFamily: {
+                        "display": ["Prompt", "sans-serif"],
+                        "sans": ["Sarabun", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.75rem",
+                        "lg": "1rem",
+                        "xl": "1.25rem",
+                        "2xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        "soft": "0 4px 20px rgba(0,0,0,0.05)",
+                        "glow": "0 0 20px rgba(255,102,0,0.15)",
+                        "card": "0 8px 30px rgba(0,0,0,0.08)",
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .text-lg, .text-xl, .text-2xl, .font-display {
+            font-family: 'Prompt', sans-serif !important;
+        }
+        .screen-card:hover .screen-overlay {
+            opacity: 1;
+        }
+        .screen-card:hover .screen-image {
+            transform: scale(1.05);
+        }
+        .screen-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-in;
+        }
+        .modal.active {
+            display: flex;
+        }
+        .modal-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            background: white;
+            border-radius: 1rem;
+            padding: 1rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .modal-content img {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 0.5rem;
+        }
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+        .modal-close:hover {
+            transform: scale(1.1);
+        }
+        .view-page-btn {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #ff6600 0%, #e55c00 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .view-page-btn:hover {
+            transform: translateX(-50%) scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 102, 0, 0.4);
+        }
+    </style>
 </head>
-<body class="flex">
+<body class="bg-background-light dark:bg-background-dark min-h-screen">
 
-    <!-- Sidebar -->
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <div class="bg-red-500 text-white p-1.5 rounded-lg">
-                <span class="material-symbols-outlined text-lg">dashboard_customize</span>
+    <!-- Header -->
+    <header class="bg-white dark:bg-stone-900 sticky top-0 z-50 border-b border-slate-100 dark:border-stone-800">
+        <div class="max-w-7xl mx-auto px-6 py-5">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <div class="bg-gradient-to-br from-primary to-orange-600 text-white p-2.5 rounded-xl shadow-glow">
+                        <span class="material-symbols-outlined text-2xl">dashboard_customize</span>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold font-display tracking-tight">CRM Day</h1>
+                        <p class="text-sm text-slate-500 dark:text-stone-400">รายการหน้าหน้าจอระบบทั้งหมด</p>
+                    </div>
+                </div>
+                <div class="text-xs text-slate-400 dark:text-stone-500 font-medium">
+                    26 Pages
+                </div>
             </div>
-            <h1 class="text-xl font-bold tracking-tight">CRM Day</h1>
         </div>
-
-        <div class="sidebar-content">
-            <!-- Main navigation categories inspired by the folders -->
-            
-            <div class="nav-section">
-                <div class="nav-section-title">หน้าหลัก <span class="material-symbols-outlined text-sm">expand_more</span></div>
-                <a href="html/onboarding_screen_mobile/code.html" target="preview" class="nav-item active" onclick="setActive(this)">เข้าสู่ระบบ / เริ่มต้นใช้งาน</a>
-                <a href="html/member_dashboard_home/code.html" target="preview" class="nav-item" onclick="setActive(this)">หน้าหลักสถาบัน</a>
-            </div>
-
-            <div class="nav-section">
-                <div class="nav-section-title">ของรางวัล & สิทธิพิเศษ <span class="material-symbols-outlined text-sm">expand_more</span></div>
-                <a href="html/rewards_marketplace/code.html" target="preview" class="nav-item" onclick="setActive(this)">ตลาดของรางวัล</a>
-                <a href="html/reward_detail/code.html" target="preview" class="nav-item" onclick="setActive(this)">รายละเอียดของรางวัล</a>
-                <a href="html/reward_checkout/code.html" target="preview" class="nav-item" onclick="setActive(this)">ยืนยันการแลกรางวัล</a>
-                <a href="html/tier_reward_detail/code.html" target="preview" class="nav-item" onclick="setActive(this)">รางวัลตามระดับสมาชิก</a>
-                <a href="html/tier_benefits_detail/code.html" target="preview" class="nav-item" onclick="setActive(this)">สิทธิประโยชน์เลเวล</a>
-            </div>
-
-            <div class="nav-section">
-                <div class="nav-section-title">ภารกิจ & กิจกรรม <span class="material-symbols-outlined text-sm">expand_more</span></div>
-                <a href="html/play_earn_missions/code.html" target="preview" class="nav-item" onclick="setActive(this)">รายการภารกิจ</a>
-                <a href="html/mission_detail_play_earn/code.html" target="preview" class="nav-item" onclick="setActive(this)">รายละเอียดภารกิจ</a>
-                <a href="html/referral_program/code.html" target="preview" class="nav-item" onclick="setActive(this)">แนะนำเพื่อน</a>
-            </div>
-
-            <div class="nav-section">
-                <div class="nav-section-title">ร้านค้า E-Store <span class="material-symbols-outlined text-sm">expand_more</span></div>
-                <a href="html/e_store_click_collect/code.html" target="preview" class="nav-item" onclick="setActive(this)">หน้าหลักร้านค้า</a>
-                <a href="html/click_collect_detail/code.html" target="preview" class="nav-item" onclick="setActive(this)">รายละเอียดสินค้า</a>
-                <a href="html/click_collect_checkout/code.html" target="preview" class="nav-item" onclick="setActive(this)">ชำระเงิน / รับสินค้า</a>
-                <a href="html/order_history/code.html" target="preview" class="nav-item" onclick="setActive(this)">ประวัติการสั่งซื้อ</a>
-            </div>
-
-            <div class="nav-section">
-                <div class="nav-section-title">กระเป๋าเงิน & บัญชี <span class="material-symbols-outlined text-sm">expand_more</span></div>
-                <a href="html/profile_edit/code.html" target="preview" class="nav-item" onclick="setActive(this)">แก้ไขโปรไฟล์</a>
-                <a href="html/my_wallet_coupons/code.html" target="preview" class="nav-item" onclick="setActive(this)">คูปองของฉัน</a>
-                <a href="html/account_history/code.html" target="preview" class="nav-item" onclick="setActive(this)">ประวัติบัญชี</a>
-                <a href="html/wallet_history/code.html" target="preview" class="nav-item" onclick="setActive(this)">ประวัติการใช้จ่าย</a>
-                <a href="html/point_history_detail/code.html" target="preview" class="nav-item" onclick="setActive(this)">ประวัติคะแนน</a>
-                <a href="html/inbox_notifications/code.html" target="preview" class="nav-item" onclick="setActive(this)">การแจ้งเตือน</a>
-                <a href="html/settings/code.html" target="preview" class="nav-item" onclick="setActive(this)">การตั้งค่า</a>
-            </div>
-
-            <div class="nav-section">
-                <div class="nav-section-title">ข่าวสาร & ช่วยเหลือ <span class="material-symbols-outlined text-sm">expand_more</span></div>
-                <a href="html/news_updates/code.html" target="preview" class="nav-item" onclick="setActive(this)">ข่าวสารล่าสุด</a>
-                <a href="html/news_detail/code.html" target="preview" class="nav-item" onclick="setActive(this)">รายละเอียดข่าว</a>
-                <a href="html/promotions_list/code.html" target="preview" class="nav-item" onclick="setActive(this)">รายการโปรโมชั่น</a>
-                <a href="html/promotion_detail/code.html" target="preview" class="nav-item" onclick="setActive(this)">รายละเอียดโปรโมชั่น</a>
-                <a href="html/help_support/code.html" target="preview" class="nav-item" onclick="setActive(this)">ศูนย์ช่วยเหลือ</a>
-            </div>
-
-        </div>
-    </aside>
+    </header>
 
     <!-- Main Content -->
-    <main class="main-container">
-        <header class="top-bar">
-            <div class="flex items-center gap-4">
-                <h2 id="current-page-title" class="text-lg font-semibold text-gray-800">เข้าสู่ระบบ / เริ่มต้นใช้งาน</h2>
-                <div id="page-path" class="text-xs text-gray-400 font-mono bg-gray-50 px-2 py-1 rounded">html/onboarding_screen_mobile/code.html</div>
-            </div>
-            
-            <div class="controls">
-                <button onclick="setView('mobile')" id="btn-mobile" class="control-btn active" title="มุมมองมือถือ">
-                    <span class="material-symbols-outlined">smartphone</span>
-                </button>
-                <button onclick="setView('tablet')" id="btn-tablet" class="control-btn" title="มุมมองแท็บเล็ต">
-                    <span class="material-symbols-outlined">tablet</span>
-                </button>
-                <button onclick="setView('desktop')" id="btn-desktop" class="control-btn" title="มุมมองเดสก์ท็อป">
-                    <span class="material-symbols-outlined">desktop_windows</span>
-                </button>
-                <div class="w-px h-6 bg-gray-200 mx-1"></div>
-                <button onclick="openExternal()" class="control-btn" title="เปิดในหน้าต่างใหม่">
-                    <span class="material-symbols-outlined">open_in_new</span>
-                </button>
-            </div>
-        </header>
+    <main class="max-w-7xl mx-auto px-6 py-8">
 
-        <section class="preview-container">
-            <div id="iframe-wrapper" class="iframe-wrapper mobile">
-                <iframe name="preview" src="html/onboarding_screen_mobile/code.html" onload="injectFonts(this)"></iframe>
+        <!-- Category: หน้าหลัก -->
+        <section class="mb-12">
+            <h2 class="text-lg font-bold text-slate-700 dark:text-stone-300 mb-6 flex items-center gap-3 font-display">
+                <span class="material-symbols-outlined text-2xl text-primary">home</span>
+                หน้าหลัก
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Onboarding Screen Mobile -->
+                <div class="screen-card bg-white dark:bg-stone-800 rounded-2xl overflow-hidden shadow-soft cursor-pointer transition-all duration-300 group" onclick="openModal('html/onboarding_screen_mobile/screen.png', 'html/onboarding_screen_mobile/code.html')">
+                    <div class="relative overflow-hidden">
+                        <img src="html/onboarding_screen_mobile/screen.png" alt="Onboarding Screen Mobile" class="screen-image w-full object-contain transition-transform duration-500">
+                        <div class="screen-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-4">
+                            <span class="text-white text-sm font-medium">เข้าสู่ระบบ / เริ่มต้นใช้งาน</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800 dark:text-stone-100 mb-1 font-display">Onboarding Screen</h3>
+                        <p class="text-sm text-slate-500 dark:text-stone-400">หน้าจอเข้าสู่ระบบ</p>
+                    </div>
+                </div>
+
+                <!-- Member Dashboard Home -->
+                <div class="screen-card bg-white dark:bg-stone-800 rounded-2xl overflow-hidden shadow-soft cursor-pointer transition-all duration-300 group" onclick="openModal('html/member_dashboard_home/screen.png', 'html/member_dashboard_home/code.html')">
+                    <div class="relative overflow-hidden">
+                        <img src="html/member_dashboard_home/screen.png" alt="Member Dashboard Home" class="screen-image w-full object-contain transition-transform duration-500">
+                        <div class="screen-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-4">
+                            <span class="text-white text-sm font-medium">หน้าหลักสถาบัน</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800 dark:text-stone-100 mb-1 font-display">Member Dashboard</h3>
+                        <p class="text-sm text-slate-500 dark:text-stone-400">หน้าหลักสถาบัน</p>
+                    </div>
+                </div>
             </div>
         </section>
+
+        <!-- Category: ของรางวัล & สิทธิพิเศษ -->
+        <section class="mb-12">
+            <h2 class="text-lg font-bold text-slate-700 dark:text-stone-300 mb-6 flex items-center gap-3 font-display">
+                <span class="material-symbols-outlined text-2xl text-primary">card_giftcard</span>
+                ของรางวัล & สิทธิพิเศษ
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Rewards Marketplace -->
+                <div class="screen-card bg-white dark:bg-stone-800 rounded-2xl overflow-hidden shadow-soft cursor-pointer transition-all duration-300 group" onclick="openModal('html/rewards_marketplace/screen.png', 'html/rewards_marketplace/code.html')">
+                    <div class="relative overflow-hidden">
+                        <img src="html/rewards_marketplace/screen.png" alt="Rewards Marketplace" class="screen-image w-full object-contain transition-transform duration-500">
+                        <div class="screen-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-4">
+                            <span class="text-white text-sm font-medium">ตลาดของรางวัล</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800 dark:text-stone-100 mb-1 font-display">Rewards Marketplace</h3>
+                        <p class="text-sm text-slate-500 dark:text-stone-400">ตลาดของรางวัล</p>
+                    </div>
+                </div>
+
+                <!-- Reward Detail -->
+                <div class="screen-card bg-white dark:bg-stone-800 rounded-2xl overflow-hidden shadow-soft cursor-pointer transition-all duration-300 group" onclick="openModal('html/reward_detail/screen.png', 'html/reward_detail/code.html')">
+                    <div class="relative overflow-hidden">
+                        <img src="html/reward_detail/screen.png" alt="Reward Detail" class="screen-image w-full object-contain transition-transform duration-500">
+                        <div class="screen-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-4">
+                            <span class="text-white text-sm font-medium">รายละเอียดของรางวัล</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800 dark:text-stone-100 mb-1 font-display">Reward Detail</h3>
+                        <p class="text-sm text-slate-500 dark:text-stone-400">รายละเอียดของรางวัล</p>
+                    </div>
+                </div>
+
+                <!-- Reward Checkout -->
+                <div class="screen-card bg-white dark:bg-stone-800 rounded-2xl overflow-hidden shadow-soft cursor-pointer transition-all duration-300 group" onclick="openModal('html/reward_checkout/screen.png', 'html/reward_checkout/code.html')">
+                    <div class="relative overflow-hidden">
+                        <img src="html/reward_checkout/screen.png" alt="Reward Checkout" class="screen-image w-full object-contain transition-transform duration-500">
+                        <div class="screen-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-4">
+                            <span class="text-white text-sm font-medium">ยืนยันการแลกรางวัล</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800 dark:text-stone-100 mb-1 font-display">Reward Checkout</h3>
+                        <p class="text-sm text-slate-500 dark:text-stone-400">ยืนยันการแลกรางวัล</p>
+                    </div>
+                </div>
+
+                <!-- Tier Reward Detail -->
+                <div class="screen-card bg-white dark:bg-stone-800 rounded-2xl overflow-hidden shadow-soft cursor-pointer transition-all duration-300 group" onclick="openModal('html/tier_reward_detail/screen.png', 'html/tier_reward_detail/code.html')">
+                    <div class="relative overflow-hidden">
+                        <img src="html/tier_reward_detail/screen.png" alt="Tier Reward Detail" class="screen-image w-full object-contain transition-transform duration-500">
+                        <div class="screen-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-4">
+                            <span class="text-white text-sm font-medium">รางวัลตามระดับสมาชิก</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800 dark:text-stone-100 mb-1 font-display">Tier Reward Detail</h3>
+                        <p class="text-sm text-slate-500 dark:text-stone-400">รางวัลตามระดับสมาชิก</p>
+                    </div>
+                </div>
+
+                <!-- Tier Benefits Detail -->
+                <div class="screen-card bg-white dark:bg-stone-800 rounded-2xl overflow-hidden shadow-soft cursor-pointer transition-all duration-300 group" onclick="openModal('html/tier_benefits_detail/screen.png', 'html/tier_benefits_detail/code.html')">
+                    <div class="relative overflow-hidden">
+                        <img src="html/tier_benefits_detail/screen.png" alt="Tier Benefits Detail" class="screen-image w-full object-contain transition-transform duration-500">
+                        <div class="screen-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-4">
+                            <span class="text-white text-sm font-medium">สิทธิประโยชน์เลเวล</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800 dark:text-stone-100 mb-1 font-display">Tier Benefits</h3>
+                        <p class="text-sm text-slate-500 dark:text-stone-400">สิทธิประโยชน์เลเวล</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category: ภารกิจ & กิจกรรม -->
+        <section class="mb-12">
+            <h2 class="text-lg font-bold text-slate-700 dark:text-stone-300 mb-6 flex items-center gap-3 font-display">
+                <span class="material-symbols-outlined text-2xl text-primary">flag</span>
+                ภารกิจ & กิจกรรม
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Play Earn Missions -->
+                <div class="screen-card bg-white dark:bg-stone-800 rounded-2xl overflow-hidden shadow-soft cursor-pointer transition-all duration-300 group" onclick="openModal('html/play_earn_missions/screen.png', 'html/play_earn_missions/code.html')">
+                    <div class="relative overflow-hidden">
+                        <img src="html/play_earn_missions/screen.png" alt="Play Earn Missions" class="screen-image w-full object-contain transition-transform duration-500">
+                        <div class="screen-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-4">
+                            <span class="text-white text-sm font-medium">รายการภารกิจ</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800 dark:text-stone-100 mb-1 font-display">Play & Earn Missions</h3>
+                        <p class="text-sm text-slate-500 dark:text-stone-400">รายการภารกิจ</p>
+                    </div>
+                </div>
+
+                <!-- Mission Detail Play Earn -->
+                <div class="screen-card bg-white dark:bg-stone-800 rounded-2xl overflow-hidden shadow-soft cursor-pointer transition-all duration-300 group" onclick="openModal('html/mission_detail_play_earn/screen.png', 'html/mission_detail_play_earn/code.html')">
+                    <div class="relative overflow-hidden">
+                        <img src="html/mission_detail_play_earn/screen.png" alt="Mission Detail Play Earn" class="screen-image w-full object-contain transition-transform duration-500">
+                        <div class="screen-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-4">
+                            <span class="text-white text-sm font-medium">รายละเอียดภารกิจ</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800 dark:text-stone-100 mb-1 font-display">Mission Detail</h3>
+                        <p class="text-sm text-slate-500 dark:text-stone-400">รายละเอียดภารกิจ</p>
+                    </div>
+                </div>
+
+                <!-- Referral Program -->
+                <div class="screen-card bg-white dark:bg-stone-800 rounded-2xl overflow-hidden shadow-soft cursor-pointer transition-all duration-300 group border-2 border-dashed border-primary/30" onclick="openModal('html/play_earn_missions/screen.png', 'html/referral_program/code.html')">
+                    <div class="absolute top-4 right-4 z-10">
+                        <div class="bg-gradient-to-br from-primary to-orange-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-lg">
+                            Coming Soon
+                        </div>
+                    </div>
+                    <div class="relative overflow-hidden opacity-60">
+                        <img src="html/play_earn_missions/screen.png" alt="Referral Program" class="screen-image w-full h-48 object-cover transition-transform duration-500 grayscale">
+                        <div class="screen-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-4">
+                            <span class="text-white text-sm font-medium">แนะนำเพื่อน</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800 dark:text-stone-100 mb-1 font-display">Referral Program</h3>
+                        <p class="text-sm text-slate-500 dark:text-stone-400">แนะนำเพื่อน</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category: ร้านค้า E-Store -->
+        <section class="mb-12">
+            <h2 class="text-lg font-bold text-slate-700 dark:text-stone-300 mb-6 flex items-center gap-3 font-display">
+                <span class="material-symbols-outlined text-2xl text-primary">storefront</span>
+                ร้านค้า E-Store
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- E Store Click Collect -->
+                <div class="screen-card bg-white dark:bg-stone-800 rounded-2xl overflow-hidden shadow-soft cursor-pointer transition-all duration-300 group" onclick="openModal('html/e_store_click_collect/screen.png', 'html/e_store_click_collect/code.html')">
+                    <div class="relative overflow-hidden">
+                        <img src="html/e_store_click_collect/screen.png" alt="E Store Click Collect" class="screen-image w-full object-contain transition-transform duration-500">
+                        <div class="screen-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-4">
+                            <span class="text-white text-sm font-medium">หน้าหลักร้านค้า</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800 dark:text-stone-100 mb-1 font-display">E-Store</h3>
+                        <p class="text-sm text-slate-500 dark:text-stone-400">หน้าหลักร้านค้า</p>
+                    </div>
+                </div>
+
+                <!-- Click Collect Detail -->
+                <div class="screen-card bg-white dark:bg-stone-800 rounded-2xl overflow-hidden shadow-soft cursor-pointer transition-all duration-300 group" onclick="openModal('html/click_collect_detail/screen.png', 'html/click_collect_detail/code.html')">
+                    <div class="relative overflow-hidden">
+                        <img src="html/click_collect_detail/screen.png" alt="Click Collect Detail" class="screen-image w-full object-contain transition-transform duration-500">
+                        <div class="screen-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-4">
+                            <span class="text-white text-sm font-medium">รายละเอียดสินค้า</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800 dark:text-stone-100 mb-1 font-display">Product Detail</h3>
+                        <p class="text-sm text-slate-500 dark:text-stone-400">รายละเอียดสินค้า</p>
+                    </div>
+                </div>
+
+                <!-- Click Collect Checkout -->
+                <div class="screen-card bg-white dark:bg-stone-800 rounded-2xl overflow-hidden shadow-soft cursor-pointer transition-all duration-300 group" onclick="openModal('html/click_collect_checkout/screen.png', 'html/click_collect_checkout/code.html')">
+                    <div class="relative overflow-hidden">
+                        <img src="html/click_collect_checkout/screen.png" alt="Click Collect Checkout" class="screen-image w-full object-contain transition-transform duration-500">
+                        <div class="screen-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-4">
+                            <span class="text-white text-sm font-medium">ชำระเงิน / รับสินค้า</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800 dark:text-stone-100 mb-1 font-display">Checkout</h3>
+                        <p class="text-sm text-slate-500 dark:text-stone-400">ชำระเงิน / รับสินค้า</p>
+                    </div>
+                </div>
+
+                <!-- Order History -->
+                <div class="screen-card bg-white dark:bg-stone-800 rounded-2xl overflow-hidden shadow-soft cursor-pointer transition-all duration-300 group" onclick="openModal('html/order_history/screen.png', 'html/order_history/code.html')">
+                    <div class="relative overflow-hidden">
+                        <img src="html/order_history/screen.png" alt="Order History" class="screen-image w-full object-contain transition-transform duration-500">
+                        <div class="screen-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-4">
+                            <span class="text-white text-sm font-medium">ประวัติการสั่งซื้อ</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800 dark:text-stone-100 mb-1 font-display">Order History</h3>
+                        <p class="text-sm text-slate-500 dark:text-stone-400">ประวัติการสั่งซื้อ</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category: กระเป๋าเงิน & บัญชี -->
+        <section class="mb-12">
+            <h2 class="text-lg font-bold text-slate-700 dark:text-stone-300 mb-6 flex items-center gap-3 font-display">
+                <span class="material-symbols-outlined text-2xl text-primary">account_balance_wallet</span>
+                กระเป๋าเงิน & บัญชี
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Profile Edit -->
+                <div class="screen-card bg-white dark:bg-stone-800 rounded-2xl overflow-hidden shadow-soft cursor-pointer transition-all duration-300 group" onclick="openModal('html/my_wallet_coupons/screen.png', 'html/profile_edit/code.html')">
+                    <div class="relative overflow-hidden">
+                        <img src="html/my_wallet_coupons/screen.png" alt="Profile Edit" class="screen-image w-full object-contain transition-transform duration-500">
+                        <div class="screen-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-4">
+                            <span class="text-white text-sm font-medium">แก้ไขโปรไฟล์</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800 dark:text-stone-100 mb-1 font-display">Profile Edit</h3>
+                        <p class="text-sm text-slate-500 dark:text-stone-400">แก้ไขโปรไฟล์</p>
+                    </div>
+                </div>
+
+                <!-- My Wallet Coupons -->
+                <div class="screen-card bg-white dark:bg-stone-800 rounded-2xl overflow-hidden shadow-soft cursor-pointer transition-all duration-300 group" onclick="openModal('html/my_wallet_coupons/screen.png', 'html/my_wallet_coupons/code.html')">
+                    <div class="relative overflow-hidden">
+                        <img src="html/my_wallet_coupons/screen.png" alt="My Wallet Coupons" class="screen-image w-full h-48 object-cover transition-transform duration-500">
+                        <div class="screen-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-4">
+                            <span class="text-white text-sm font-medium">คูปองของฉัน</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800 dark:text-stone-100 mb-1 font-display">My Wallet Coupons</h3>
+                        <p class="text-sm text-slate-500 dark:text-stone-400">คูปองของฉัน</p>
+                    </div>
+                </div>
+
+                <!-- Account History -->
+                <div class="screen-card bg-white dark:bg-stone-800 rounded-2xl overflow-hidden shadow-soft cursor-pointer transition-all duration-300 group" onclick="openModal('html/account_history/screen.png', 'html/account_history/code.html')">
+                    <div class="relative overflow-hidden">
+                        <img src="html/account_history/screen.png" alt="Account History" class="screen-image w-full object-contain transition-transform duration-500">
+                        <div class="screen-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-4">
+                            <span class="text-white text-sm font-medium">ประวัติบัญชี</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800 dark:text-stone-100 mb-1 font-display">Account History</h3>
+                        <p class="text-sm text-slate-500 dark:text-stone-400">ประวัติบัญชี</p>
+                    </div>
+                </div>
+
+                <!-- Wallet History -->
+                <div class="screen-card bg-white dark:bg-stone-800 rounded-2xl overflow-hidden shadow-soft cursor-pointer transition-all duration-300 group" onclick="openModal('html/wallet_history/screen.png', 'html/wallet_history/code.html')">
+                    <div class="relative overflow-hidden">
+                        <img src="html/wallet_history/screen.png" alt="Wallet History" class="screen-image w-full object-contain transition-transform duration-500">
+                        <div class="screen-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-4">
+                            <span class="text-white text-sm font-medium">ประวัติการใช้จ่าย</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800 dark:text-stone-100 mb-1 font-display">Wallet History</h3>
+                        <p class="text-sm text-slate-500 dark:text-stone-400">ประวัติการใช้จ่าย</p>
+                    </div>
+                </div>
+
+                <!-- Point History Detail -->
+                <div class="screen-card bg-white dark:bg-stone-800 rounded-2xl overflow-hidden shadow-soft cursor-pointer transition-all duration-300 group" onclick="openModal('html/point_history_detail/screen.png', 'html/point_history_detail/code.html')">
+                    <div class="relative overflow-hidden">
+                        <img src="html/point_history_detail/screen.png" alt="Point History Detail" class="screen-image w-full object-contain transition-transform duration-500">
+                        <div class="screen-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-4">
+                            <span class="text-white text-sm font-medium">ประวัติคะแนน</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800 dark:text-stone-100 mb-1 font-display">Point History</h3>
+                        <p class="text-sm text-slate-500 dark:text-stone-400">ประวัติคะแนน</p>
+                    </div>
+                </div>
+
+                <!-- Inbox Notifications -->
+                <div class="screen-card bg-white dark:bg-stone-800 rounded-2xl overflow-hidden shadow-soft cursor-pointer transition-all duration-300 group" onclick="openModal('html/inbox_notifications/screen.png', 'html/inbox_notifications/code.html')">
+                    <div class="relative overflow-hidden">
+                        <img src="html/inbox_notifications/screen.png" alt="Inbox Notifications" class="screen-image w-full object-contain transition-transform duration-500">
+                        <div class="screen-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-4">
+                            <span class="text-white text-sm font-medium">การแจ้งเตือน</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800 dark:text-stone-100 mb-1 font-display">Notifications</h3>
+                        <p class="text-sm text-slate-500 dark:text-stone-400">การแจ้งเตือน</p>
+                    </div>
+                </div>
+
+                <!-- Settings -->
+                <div class="screen-card bg-white dark:bg-stone-800 rounded-2xl overflow-hidden shadow-soft cursor-pointer transition-all duration-300 group" onclick="openModal('html/help_support/screen.png', 'html/settings/code.html')">
+                    <div class="relative overflow-hidden">
+                        <img src="html/help_support/screen.png" alt="Settings" class="screen-image w-full object-contain transition-transform duration-500">
+                        <div class="screen-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-4">
+                            <span class="text-white text-sm font-medium">การตั้งค่า</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800 dark:text-stone-100 mb-1 font-display">Settings</h3>
+                        <p class="text-sm text-slate-500 dark:text-stone-400">การตั้งค่า</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category: ข่าวสาร & ช่วยเหลือ -->
+        <section class="mb-12">
+            <h2 class="text-lg font-bold text-slate-700 dark:text-stone-300 mb-6 flex items-center gap-3 font-display">
+                <span class="material-symbols-outlined text-2xl text-primary">article</span>
+                ข่าวสาร & ช่วยเหลือ
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- News Updates -->
+                <div class="screen-card bg-white dark:bg-stone-800 rounded-2xl overflow-hidden shadow-soft cursor-pointer transition-all duration-300 group" onclick="openModal('html/news_updates/screen.png', 'html/news_updates/code.html')">
+                    <div class="relative overflow-hidden">
+                        <img src="html/news_updates/screen.png" alt="News Updates" class="screen-image w-full object-contain transition-transform duration-500">
+                        <div class="screen-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-4">
+                            <span class="text-white text-sm font-medium">ข่าวสารล่าสุด</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800 dark:text-stone-100 mb-1 font-display">News Updates</h3>
+                        <p class="text-sm text-slate-500 dark:text-stone-400">ข่าวสารล่าสุด</p>
+                    </div>
+                </div>
+
+                <!-- News Detail -->
+                <div class="screen-card bg-white dark:bg-stone-800 rounded-2xl overflow-hidden shadow-soft cursor-pointer transition-all duration-300 group" onclick="openModal('html/news_detail/screen.png', 'html/news_detail/code.html')">
+                    <div class="relative overflow-hidden">
+                        <img src="html/news_detail/screen.png" alt="News Detail" class="screen-image w-full object-contain transition-transform duration-500">
+                        <div class="screen-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-4">
+                            <span class="text-white text-sm font-medium">รายละเอียดข่าว</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800 dark:text-stone-100 mb-1 font-display">News Detail</h3>
+                        <p class="text-sm text-slate-500 dark:text-stone-400">รายละเอียดข่าว</p>
+                    </div>
+                </div>
+
+                <!-- Promotions List -->
+                <div class="screen-card bg-white dark:bg-stone-800 rounded-2xl overflow-hidden shadow-soft cursor-pointer transition-all duration-300 group" onclick="openModal('html/promotions_list/screen.png', 'html/promotions_list/code.html')">
+                    <div class="relative overflow-hidden">
+                        <img src="html/promotions_list/screen.png" alt="Promotions List" class="screen-image w-full object-contain transition-transform duration-500">
+                        <div class="screen-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-4">
+                            <span class="text-white text-sm font-medium">รายการโปรโมชั่น</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800 dark:text-stone-100 mb-1 font-display">Promotions List</h3>
+                        <p class="text-sm text-slate-500 dark:text-stone-400">รายการโปรโมชั่น</p>
+                    </div>
+                </div>
+
+                <!-- Promotion Detail -->
+                <div class="screen-card bg-white dark:bg-stone-800 rounded-2xl overflow-hidden shadow-soft cursor-pointer transition-all duration-300 group" onclick="openModal('html/promotion_detail/screen.png', 'html/promotion_detail/code.html')">
+                    <div class="relative overflow-hidden">
+                        <img src="html/promotion_detail/screen.png" alt="Promotion Detail" class="screen-image w-full object-contain transition-transform duration-500">
+                        <div class="screen-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-4">
+                            <span class="text-white text-sm font-medium">รายละเอียดโปรโมชั่น</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800 dark:text-stone-100 mb-1 font-display">Promotion Detail</h3>
+                        <p class="text-sm text-slate-500 dark:text-stone-400">รายละเอียดโปรโมชั่น</p>
+                    </div>
+                </div>
+
+                <!-- Help Support -->
+                <div class="screen-card bg-white dark:bg-stone-800 rounded-2xl overflow-hidden shadow-soft cursor-pointer transition-all duration-300 group" onclick="openModal('html/help_support/screen.png', 'html/help_support/code.html')">
+                    <div class="relative overflow-hidden">
+                        <img src="html/help_support/screen.png" alt="Help Support" class="screen-image w-full h-48 object-cover transition-transform duration-500">
+                        <div class="screen-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-4">
+                            <span class="text-white text-sm font-medium">ศูนย์ช่วยเหลือ</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800 dark:text-stone-100 mb-1 font-display">Help & Support</h3>
+                        <p class="text-sm text-slate-500 dark:text-stone-400">ศูนย์ช่วยเหลือ</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Onboarding Screen (Desktop) -->
+        <section class="mb-12">
+            <h2 class="text-lg font-bold text-slate-700 dark:text-stone-300 mb-6 flex items-center gap-3 font-display">
+                <span class="material-symbols-outlined text-2xl text-primary">desktop_windows</span>
+                Desktop Onboarding
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Onboarding Screen -->
+                <div class="screen-card bg-white dark:bg-stone-800 rounded-2xl overflow-hidden shadow-soft cursor-pointer transition-all duration-300 group" onclick="openModal('html/onboarding_screen/screen.png', 'html/onboarding_screen/code.html')">
+                    <div class="relative overflow-hidden">
+                        <img src="html/onboarding_screen/screen.png" alt="Onboarding Screen" class="screen-image w-full object-contain transition-transform duration-500">
+                        <div class="screen-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-4">
+                            <span class="text-white text-sm font-medium">Onboarding Screen</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800 dark:text-stone-100 mb-1 font-display">Onboarding Screen</h3>
+                        <p class="text-sm text-slate-500 dark:text-stone-400">หน้าจอเข้าสู่ระบบ (Desktop)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <script src="index.js"></script>
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-stone-900 border-t border-slate-100 dark:border-stone-800 py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-sm text-slate-500 dark:text-stone-400">© 2026 CRM Day. All rights reserved.</p>
+            <p class="text-xs text-slate-400 dark:text-stone-500 mt-2">Designed with ❤️ using Tailwind CSS</p>
+        </div>
+    </footer>
+
+    <!-- Modal for full-size image view -->
+    <div id="imageModal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal(event)">×</button>
+            <img id="modalImage" src="" alt="Full size screen">
+            <button id="viewPageBtn" class="view-page-btn" onclick="viewPage()">View Page</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal(imageSrc, pageUrl) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const viewPageBtn = document.getElementById('viewPageBtn');
+
+            modalImage.src = imageSrc;
+            viewPageBtn.setAttribute('data-page', pageUrl);
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(event) {
+            if (event.target === event.currentTarget || event.target.classList.contains('modal-close')) {
+                const modal = document.getElementById('imageModal');
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        function viewPage() {
+            const viewPageBtn = document.getElementById('viewPageBtn');
+            const pageUrl = viewPageBtn.getAttribute('data-page');
+            window.location.href = pageUrl;
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal(event);
+            }
+        });
+    </script>
+
 </body>
 </html>
