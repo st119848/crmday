@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRM Day - Project Showcase</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500" rel="stylesheet">
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Sarabun', sans-serif;
             background-color: #f8f9fa;
             color: #1a1a1a;
             overflow: hidden;
+        }
+        h1, h2, h3, h4, h5, h6, .nav-section-title {
+            font-family: 'Prompt', sans-serif;
         }
         .sidebar {
             width: 280px;
@@ -172,8 +175,7 @@
             
             <div class="nav-section">
                 <div class="nav-section-title">Main Screens <span class="material-symbols-outlined text-sm">expand_more</span></div>
-                <a href="html/onboarding_screen/code.html" target="preview" class="nav-item active" onclick="setActive(this)">Onboarding</a>
-                <a href="html/onboarding_screen_mobile/code.html" target="preview" class="nav-item" onclick="setActive(this)">Onboarding (Mobile)</a>
+                <a href="html/onboarding_screen_mobile/code.html" target="preview" class="nav-item active" onclick="setActive(this)">Onboarding (Mobile)</a>
                 <a href="html/member_dashboard_home/code.html" target="preview" class="nav-item" onclick="setActive(this)">Dashboard Home</a>
             </div>
 
@@ -224,8 +226,8 @@
     <main class="main-container">
         <header class="top-bar">
             <div class="flex items-center gap-4">
-                <h2 id="current-page-title" class="text-lg font-semibold text-gray-800">Onboarding Screen</h2>
-                <div id="page-path" class="text-xs text-gray-400 font-mono bg-gray-50 px-2 py-1 rounded">html/onboarding_screen/code.html</div>
+                <h2 id="current-page-title" class="text-lg font-semibold text-gray-800">Onboarding (Mobile)</h2>
+                <div id="page-path" class="text-xs text-gray-400 font-mono bg-gray-50 px-2 py-1 rounded">html/onboarding_screen_mobile/code.html</div>
             </div>
             
             <div class="controls">
@@ -247,7 +249,7 @@
 
         <section class="preview-container">
             <div id="iframe-wrapper" class="iframe-wrapper">
-                <iframe name="preview" src="html/onboarding_screen/code.html"></iframe>
+                <iframe name="preview" src="html/onboarding_screen_mobile/code.html" onload="injectFonts(this)"></iframe>
             </div>
         </section>
     </main>
@@ -288,6 +290,44 @@
         function openExternal() {
             const iframe = document.querySelector('iframe');
             window.open(iframe.src, '_blank');
+        }
+
+        // Font injection for iframe content
+        function injectFonts(iframe) {
+            try {
+                const doc = iframe.contentDocument || iframe.contentWindow.document;
+                if (!doc) return;
+
+                // 1. Add Google Font link to iframe head
+                const link = doc.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = 'https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap';
+                doc.head.appendChild(link);
+
+                // 2. Add Style overrides to iframe head
+                const style = doc.createElement('style');
+                style.textContent = `
+                    /* Apply Sarabun to body and normal text */
+                    body, p, span, a, li, input, button, .font-sans { 
+                        font-family: 'Sarabun', sans-serif !important; 
+                    }
+                    /* Apply Prompt to all headings and display text */
+                    h1, h2, h3, h4, h5, h6, .font-display, [class*="font-bold"], .text-lg, .text-xl, .text-2xl { 
+                        font-family: 'Prompt', sans-serif !important; 
+                    }
+                `;
+                doc.head.appendChild(style);
+
+                // 3. Update Tailwind if available in the iframe context
+                if (iframe.contentWindow.tailwind) {
+                    iframe.contentWindow.tailwind.config.theme.extend.fontFamily = {
+                        display: ['Prompt', 'sans-serif'],
+                        sans: ['Sarabun', 'sans-serif']
+                    };
+                }
+            } catch (e) {
+                console.warn("Cross-origin or initialization error injecting fonts:", e);
+            }
         }
     </script>
 </body>
