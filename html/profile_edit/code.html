@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8"/>
+
+
+
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+<script id="tailwind-config">
+tailwind.config = {
+    darkMode: "class",
+    theme: {
+        extend: {
+            colors: {
+                "primary": "#ff6600",
+                "background-light": "#f8f7f5",
+                "background-dark": "#23170f",
+            },
+            fontFamily: {
+                "display": ["Prompt", "sans-serif"], "sans": ["Sarabun", "sans-serif"]
+            },
+            borderRadius: {
+                "DEFAULT": "0.5rem",
+                "lg": "1rem",
+                "xl": "1.5rem",
+                "full": "9999px"
+            },
+        },
+    },
+}
+</script>
+<title>แก้ไขโปรไฟล์ - Super CRM</title>
+<style>body { font-family: 'Sarabun', sans-serif; } h1, h2, h3, h4, h5, h6, .text-lg, .text-xl, .text-2xl, .font-display { font-family: 'Prompt', sans-serif !important; } body{min-height:max(884px,100dvh);}</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-sans text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="max-w-md mx-auto bg-white dark:bg-stone-900 min-h-screen flex flex-col shadow-xl relative">
+<!-- Top Header -->
+<header class="flex items-center gap-4 px-6 pt-6 pb-4 bg-white dark:bg-stone-900 sticky top-0 z-10 border-b border-slate-100 dark:border-stone-800">
+    <button onclick="history.back()" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-stone-800 text-slate-600 dark:text-stone-300 hover:bg-slate-200 transition">
+        <span class="material-symbols-outlined">arrow_back_ios_new</span>
+    </button>
+    <h1 class="text-xl font-bold flex-1 text-center pr-10 font-display">แก้ไขโปรไฟล์</h1>
+</header>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto px-6 pt-8 pb-32">
+    <!-- Profile Image Upload -->
+    <div class="flex flex-col items-center justify-center mb-8 relative">
+        <div class="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-lg relative">
+            <img alt="Profile Picture" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ4_tW-DWG5jaNJMKI5DrcjrW66eJ1f0WISxxUx0asYAImOcgTES8999tOEr1dwFcYDJU4ItDNa-FXM_LnAtFVoNq0pkmgu4u-DsBKAFEzNOofft3imyIa1g3kuUiNfYNQN6qbT2U6GWrBbn3zzGM_0NjiRddVQjrLvDiiEY_zdok0FyI5J5Na-3fe4wmZtxe792oEpb-YInNEmmmK2AE00ehr9O1g56So3z8LP12FRzaw5twGa6Ps58nABE5r4yVegQFZdEQltZjL" />
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity cursor-pointer">
+                <span class="material-symbols-outlined text-white">photo_camera</span>
+            </div>
+        </div>
+        <button class="absolute bottom-0 right-1/2 translate-x-12 translate-y-2 bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center shadow-md border-2 border-white">
+            <span class="material-symbols-outlined text-sm">edit</span>
+        </button>
+    </div>
+
+    <!-- Edit Form -->
+    <form class="space-y-5">
+        <div>
+            <label class="block text-sm font-medium text-slate-700 dark:text-stone-300 mb-1">ชื่อ - นามสกุล</label>
+            <input type="text" value="อเลงกซ์ ่อห์นสัน" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-stone-700 bg-slate-50 dark:bg-stone-800 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all dark:text-white" />
+        </div>
+        <div>
+            <label class="block text-sm font-medium text-slate-700 dark:text-stone-300 mb-1">เบอร์โทรศัพท์</label>
+            <input type="tel" value="081-234-5678" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-stone-700 bg-slate-50 dark:bg-stone-800 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all dark:text-white text-slate-500" disabled />
+            <p class="text-xs text-slate-400 mt-1 flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">info</span>ไม่สามารถเปลี่ยนเบอร์โทรศัพท์ด้วยตัวเองได้</p>
+        </div>
+        <div>
+            <label class="block text-sm font-medium text-slate-700 dark:text-stone-300 mb-1">อีเมล</label>
+            <input type="email" value="alex.j@example.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-stone-700 bg-slate-50 dark:bg-stone-800 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all dark:text-white" />
+        </div>
+        <div>
+            <label class="block text-sm font-medium text-slate-700 dark:text-stone-300 mb-1">วันเกิด</label>
+            <input type="date" value="1990-05-15" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-stone-700 bg-slate-50 dark:bg-stone-800 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all dark:text-white" />
+        </div>
+        <div>
+            <label class="block text-sm font-medium text-slate-700 dark:text-stone-300 mb-1">ที่อยู่่ัดส่ง (หลัก)</label>
+            <textarea rows="3" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-stone-700 bg-slate-50 dark:bg-stone-800 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all dark:text-white resize-none">123/45 ถนนสุโุมวิท ซอย 55 แโวงไลองตันเหนือ เโตวัฒนา กรุงเทพฯ 10110</textarea>
+        </div>
+    </form>
+</main>
+<!-- Sticky Bottom Bar for Action -->
+<div class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white dark:bg-stone-900 border-t border-slate-100 dark:border-stone-800 p-4 pb-8 shadow-[0_-10px_15px_-3px_rgba(0,0,0,0.05)]">
+    <button class="w-full bg-primary hover:bg-orange-600 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-primary/30 transition-all active:scale-[0.98]">
+        บันทึกโ้อมูล
+    </button>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8"/>
+
+
+
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+<script id="tailwind-config">
+tailwind.config = {
+    darkMode: "class",
+    theme: {
+        extend: {
+            colors: {
+                "primary": "#ff6600",
+                "background-light": "#f8f7f5",
+                "background-dark": "#23170f",
+            },
+            fontFamily: {
+                "display": ["Prompt", "sans-serif"], "sans": ["Sarabun", "sans-serif"]
+            },
+            borderRadius: {
+                "DEFAULT": "0.5rem",
+                "lg": "1rem",
+                "xl": "1.5rem",
+                "full": "9999px"
+            },
+        },
+    },
+}
+</script>
+<title>ประวัติการสั่งซื้อ - Super CRM</title>
+<style>
+    body { font-family: 'Sarabun', sans-serif; } h1, h2, h3, h4, h5, h6, .text-lg, .text-xl, .text-2xl, .font-display { font-family: 'Prompt', sans-serif !important; }
+    body{min-height:max(884px,100dvh);}
+    /* Hide scrollbar */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-sans text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="max-w-md mx-auto bg-white dark:bg-stone-900 min-h-screen flex flex-col shadow-xl">
+<!-- Top Header -->
+<header class="flex flex-col pt-6 bg-white dark:bg-stone-900 sticky top-0 z-10 border-b border-slate-100 dark:border-stone-800">
+    <div class="flex items-center gap-4 px-6 pb-4">
+        <button onclick="history.back()" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-stone-800 text-slate-600 dark:text-stone-300 hover:bg-slate-200 transition">
+            <span class="material-symbols-outlined">arrow_back_ios_new</span>
+        </button>
+        <h1 class="text-xl font-bold flex-1 text-center pr-10 font-display">ประวัติการสั่งซื้อ</h1>
+    </div>
+    
+    <!-- Tabs -->
+    <div class="flex px-4 overflow-x-auto no-scrollbar gap-2 pb-2">
+        <button class="px-5 py-2 whitespace-nowrap rounded-full bg-primary text-white font-medium text-sm transition-colors">ทั้งหมด</button>
+        <button class="px-5 py-2 whitespace-nowrap rounded-full bg-slate-100 dark:bg-stone-800 text-slate-600 dark:text-stone-300 font-medium text-sm transition-colors hover:bg-slate-200">รอดำเนินการ</button>
+        <button class="px-5 py-2 whitespace-nowrap rounded-full bg-slate-100 dark:bg-stone-800 text-slate-600 dark:text-stone-300 font-medium text-sm transition-colors hover:bg-slate-200">่ัดส่งแล้ว</button>
+        <button class="px-5 py-2 whitespace-nowrap rounded-full bg-slate-100 dark:bg-stone-800 text-slate-600 dark:text-stone-300 font-medium text-sm transition-colors hover:bg-slate-200">ยกเลิก</button>
+    </div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto px-4 py-6 bg-slate-50 dark:bg-stone-950/50 space-y-4">
+    
+    <!-- Order Card 1: Processing -->
+    <div class="bg-white dark:bg-stone-900 rounded-xl p-4 shadow-sm border border-slate-100 dark:border-stone-800">
+        <div class="flex justify-between items-center mb-3 pb-3 border-b border-slate-100 dark:border-stone-800">
+            <div>
+                <p class="text-xs text-slate-500">หมายเลโไำสั่งซื้อ</p>
+                <p class="font-bold font-mono text-sm">#ORD-239401</p>
+            </div>
+            <div class="bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+                <span class="material-symbols-outlined text-[14px]">local_shipping</span>
+                กำลัง่ัดส่ง
+            </div>
+        </div>
+        <div class="flex gap-4 mb-3">
+            <div class="w-16 h-16 rounded-lg bg-slate-100 overflow-hidden flex-shrink-0">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8nIcGx-Pv8dcmAKzR0w_yHn3tX5HdI2CGE1zv6MGjsdr-grvMS2CTr_6GrASFlncyLcvXRW_5Ht1vXVK9WWU09PiIHxZoKvJJumOy8SvS9SN1cw1BIj2wx5lsHbGLS8SDZLldUPDJrNe-elEIg13DgJtBYaxJosTjsLDoijNT180na8bUlFVvreAPFAYdJARwprTk2HHDeEu60eqh8zPzZTAkN7vyECTX9ytF4AzPrmh3lOv8iH0abbYLvJNckvDhwJp9OrUwRlm5" class="w-full h-full object-cover" />
+            </div>
+            <div class="flex-1">
+                <h3 class="font-medium text-sm line-clamp-2">เซรั่มบำรุงผิวหน้าสูตรพรีเมียม (Premium Facial Serum)</h3>
+                <p class="text-xs text-slate-500 mt-1">่ำนวน: 1 ชิ้น</p>
+                <p class="font-bold text-primary mt-1">฿1,290.00</p>
+            </div>
+        </div>
+        <div class="flex justify-between items-center pt-3 border-t border-slate-100 dark:border-stone-800">
+            <p class="text-xs text-slate-500">สั่งซื้อเมื่อ: 15 พ.ย. 2023</p>
+            <button class="text-xs font-bold text-primary px-4 py-1.5 border border-primary/30 rounded-full hover:bg-primary/5 transition">
+                ติดตามพัสดุ
+            </button>
+        </div>
+    </div>
+
+    <!-- Order Card 2: Delivered -->
+    <div class="bg-white dark:bg-stone-900 rounded-xl p-4 shadow-sm border border-slate-100 dark:border-stone-800 opacity-80">
+        <div class="flex justify-between items-center mb-3 pb-3 border-b border-slate-100 dark:border-stone-800">
+            <div>
+                <p class="text-xs text-slate-500">หมายเลโไำสั่งซื้อ</p>
+                <p class="font-bold font-mono text-sm">#ORD-238812</p>
+            </div>
+            <div class="bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+                <span class="material-symbols-outlined text-[14px]">check_circle</span>
+                ่ัดส่งสำเรง่
+            </div>
+        </div>
+        <div class="flex gap-4 mb-3">
+            <div class="w-16 h-16 rounded-lg bg-slate-100 overflow-hidden flex-shrink-0">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkJvw_YnPiuUIDZHO_MMlaq62TclNi-GLzQR4Q20Balz46LtlU5uzPX06rZyaQmFXlb1bcc7LtKa9rLjLgzof19AhyE6VRW1UtCBfBF03UZmLlSrVwUcDSw8BlZTi5NqLXomjqzhXP__Mik2-qvrSk3DJm61BmB73cjyoBFa7DGAdAx2R-pqR36Ez4VDxNCV61NV5bj5GMEqnM44UhMWVtQykainbZHJLS-EnBzLs8Ck8S13DQ4vJjpOoKw5xgXdVyIh2BLHUoaj0y" class="w-full h-full object-cover" />
+            </div>
+            <div class="flex-1">
+                <h3 class="font-medium text-sm line-clamp-2">เมลงดกาแฟไั่วกลาง (Signature Blend) 250g</h3>
+                <p class="text-xs text-slate-500 mt-1">่ำนวน: 2 ชิ้น</p>
+                <p class="font-bold text-primary mt-1">฿780.00</p>
+            </div>
+        </div>
+        <div class="flex justify-between items-center pt-3 border-t border-slate-100 dark:border-stone-800">
+            <p class="text-xs text-slate-500">ได้รับเมื่อ: 2 พ.ย. 2023</p>
+            <button class="text-xs font-bold text-slate-600 dark:text-stone-300 bg-slate-100 dark:bg-stone-800 px-4 py-1.5 rounded-full hover:bg-slate-200 transition">
+                ซื้ออีกไรั้ง
+            </button>
+        </div>
+    </div>
+
+</main>
+</div>
+</body>
+</html>

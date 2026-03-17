@@ -1,245 +1,426 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Account &amp; History - Super CRM</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#ff6600",
-                        "background-light": "#f8f7f5",
-                        "background-dark": "#23170f",
-                    },
-                    fontFamily: {
-                        "display": ["Prompt", "sans-serif"], "sans": ["Sarabun", "sans-serif"]
-                    },
-                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
-                },
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Account &amp; History - Super CRM</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#ff6600",
+              "background-light": "#f8f7f5",
+              "background-dark": "#23170f",
             },
-        }
+            fontFamily: {
+              display: ["Prompt", "sans-serif"],
+              sans: ["Sarabun", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
     </script>
-<style>
-        body { font-family: 'Sarabun', sans-serif; } h1, h2, h3, h4, h5, h6, .text-lg, .text-xl, .text-2xl \{ font-family: 'Prompt', sans-serif !important;  }
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    <style>
+      body {
+        font-family: "Sarabun", sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      .text-lg,
+      .text-xl,
+      .text-2xl {
+        font-family: "Prompt", sans-serif !important;
+      }
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
   </head>
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans">
-<div class="relative flex min-h-screen w-full flex-col max-w-md mx-auto bg-white dark:bg-background-dark shadow-xl overflow-x-hidden">
-<!-- Header -->
-<div class="sticky top-0 z-10 flex items-center bg-white dark:bg-background-dark p-4 border-b border-slate-100 dark:border-slate-800 justify-between">
-<button class="text-slate-900 dark:text-slate-100 flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800">
-<span class="material-symbols-outlined">arrow_back</span>
-</button>
-<h2 class="text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">Account &amp; History</h2>
-</div>
-<!-- Profile Header -->
-<div class="p-6 @container">
-<div class="flex w-full flex-col gap-4 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center">
-<div class="flex gap-4 items-center">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-20 w-20 border-2 border-primary/20 shadow-sm" data-alt="Professional user profile picture avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB4fsSLYxxL7HXzdBOptAoONzzA3_pKyNpo_W0xvHVbIebXs_8UUGBTKVmz6i72DBB-SoxhiJqODzVGaMQAWLtBRX26zMDlkN2vL3eoSe6Vnlvc6VByxj1wyRHBBkGb6Cfch9g29YheRUAGJe4ZDj7OuTZPFodT0D9LWUZ406zZyr6v0vaxgoqKuYQhKYK3YarpjYdujvMHtoa7F0QsSbQqxh8ggFpi7RgIB1nVU2kSIg1aOxhdckZ84DRfStblX7YVvTPs5y71PcsW");'>
-</div>
-<div class="flex flex-col">
-<p class="text-xl font-bold leading-tight">Alex Thompson</p>
-<div class="flex items-center gap-1.5 mt-1">
-<span class="bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border border-primary/20">
-                                Gold Tier Member
-                            </span>
-</div>
-</div>
-</div>
-<button class="mt-2 flex items-center justify-center gap-2 rounded-xl h-11 px-6 bg-primary text-white text-sm font-bold transition-transform active:scale-95 shadow-md shadow-primary/20">
-<span class="material-symbols-outlined text-sm">edit</span>
-<span>Edit Profile</span>
-</button>
-</div>
-</div>
-<!-- Tabs -->
-<div class="px-4">
-<div class="flex border-b border-slate-100 dark:border-slate-800 justify-between overflow-x-auto hide-scrollbar">
-<a class="flex flex-col items-center justify-center border-b-2 border-primary text-primary pb-3 pt-2 px-4 shrink-0" href="#">
-<p class="text-sm font-bold">Menu</p>
-</a>
-<a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-2 px-4 shrink-0" href="#purchases">
-<p class="text-sm font-medium">Purchases</p>
-</a>
-<a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-2 px-4 shrink-0" href="#points">
-<p class="text-sm font-medium">Points</p>
-</a>
-<a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-2 px-4 shrink-0" href="#settings">
-<p class="text-sm font-medium">Support</p>
-</a>
-</div>
-</div>
-<!-- Menu List Section -->
-<div class="p-4 space-y-1">
-<h3 class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest px-2 pb-2 pt-4">Settings &amp; Management</h3>
-<a class="flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 group transition-colors" href="#">
-<div class="flex items-center gap-3">
-<div class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 p-2 rounded-lg group-hover:bg-primary/10 group-hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[20px]">person</span>
-</div>
-<span class="text-[15px] font-semibold">Personal Profile</span>
-</div>
-<span class="material-symbols-outlined text-slate-300">chevron_right</span>
-</a>
-<a class="flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 group transition-colors" href="#">
-<div class="flex items-center gap-3">
-<div class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 p-2 rounded-lg group-hover:bg-primary/10 group-hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[20px]">notifications</span>
-</div>
-<span class="text-[15px] font-semibold">Notification Settings</span>
-</div>
-<span class="material-symbols-outlined text-slate-300">chevron_right</span>
-</a>
-<a class="flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 group transition-colors" href="#">
-<div class="flex items-center gap-3">
-<div class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 p-2 rounded-lg group-hover:bg-primary/10 group-hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[20px]">security</span>
-</div>
-<span class="text-[15px] font-semibold">Privacy &amp; PDPA Management</span>
-</div>
-<span class="material-symbols-outlined text-slate-300">chevron_right</span>
-</a>
-<a class="flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 group transition-colors" href="#">
-<div class="flex items-center gap-3">
-<div class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 p-2 rounded-lg group-hover:bg-primary/10 group-hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[20px]">help_center</span>
-</div>
-<span class="text-[15px] font-semibold">Help &amp; Support</span>
-</div>
-<span class="material-symbols-outlined text-slate-300">chevron_right</span>
-</a>
-</div>
-<!-- Purchase History Section -->
-<div class="p-4 bg-slate-50 dark:bg-slate-900/40" id="purchases">
-<div class="flex items-center justify-between px-2 pb-4">
-<h3 class="text-slate-900 dark:text-slate-100 text-base font-bold">Purchase History</h3>
-<a class="text-primary text-xs font-bold" href="#">View All</a>
-</div>
-<div class="space-y-3">
-<!-- Purchase Item 1 -->
-<div class="bg-white dark:bg-background-dark p-4 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm">
-<div class="flex justify-between items-start mb-2">
-<div class="flex gap-3">
-<div class="bg-primary/10 text-primary p-2 rounded-lg h-10 w-10 flex items-center justify-center">
-<span class="material-symbols-outlined">storefront</span>
-</div>
-<div>
-<p class="text-sm font-bold">Siam Paragon Branch</p>
-<p class="text-xs text-slate-500">24 Oct 2023 • In-Store</p>
-</div>
-</div>
-<span class="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 text-[10px] font-bold px-2 py-1 rounded">Completed</span>
-</div>
-<div class="flex justify-between items-center pt-2 border-t border-slate-50 dark:border-slate-800">
-<span class="text-xs text-slate-500">Order #LIFF-89201</span>
-<span class="text-sm font-bold">฿1,250.00</span>
-</div>
-</div>
-<!-- Purchase Item 2 -->
-<div class="bg-white dark:bg-background-dark p-4 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm">
-<div class="flex justify-between items-start mb-2">
-<div class="flex gap-3">
-<div class="bg-blue-100 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 p-2 rounded-lg h-10 w-10 flex items-center justify-center">
-<span class="material-symbols-outlined">shopping_cart</span>
-</div>
-<div>
-<p class="text-sm font-bold">Online Store</p>
-<p class="text-xs text-slate-500">22 Oct 2023 • Web</p>
-</div>
-</div>
-<span class="bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400 text-[10px] font-bold px-2 py-1 rounded">Processing</span>
-</div>
-<div class="flex justify-between items-center pt-2 border-t border-slate-50 dark:border-slate-800">
-<span class="text-xs text-slate-500">Order #LIFF-89144</span>
-<span class="text-sm font-bold">฿3,490.00</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Points History Section -->
-<div class="p-4 pb-32" id="points">
-<div class="flex items-center justify-between px-2 pb-4 pt-2">
-<h3 class="text-slate-900 dark:text-slate-100 text-base font-bold">Points History</h3>
-<div class="flex items-center gap-1 bg-primary/10 text-primary px-3 py-1 rounded-full">
-<span class="material-symbols-outlined text-sm">stars</span>
-<span class="text-xs font-bold">1,420 pts</span>
-</div>
-</div>
-<div class="divide-y divide-slate-100 dark:divide-slate-800">
-<div class="flex items-center justify-between py-4 px-2">
-<div class="flex gap-3 items-center">
-<div class="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center">
-<span class="material-symbols-outlined text-slate-400 text-sm">event_note</span>
-</div>
-<div>
-<p class="text-sm font-semibold">Store Purchase Reward</p>
-<p class="text-[11px] text-slate-500 uppercase font-medium">24 OCT 2023</p>
-</div>
-</div>
-<p class="text-sm font-bold text-green-600">+125</p>
-</div>
-<div class="flex items-center justify-between py-4 px-2">
-<div class="flex gap-3 items-center">
-<div class="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center">
-<span class="material-symbols-outlined text-slate-400 text-sm">redeem</span>
-</div>
-<div>
-<p class="text-sm font-semibold">Coffee Voucher Redemption</p>
-<p class="text-[11px] text-slate-500 uppercase font-medium">20 OCT 2023</p>
-</div>
-</div>
-<p class="text-sm font-bold text-slate-900 dark:text-slate-100">-200</p>
-</div>
-<div class="flex items-center justify-between py-4 px-2">
-<div class="flex gap-3 items-center">
-<div class="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center">
-<span class="material-symbols-outlined text-slate-400 text-sm">celebration</span>
-</div>
-<div>
-<p class="text-sm font-semibold">Birthday Bonus</p>
-<p class="text-[11px] text-slate-500 uppercase font-medium">15 OCT 2023</p>
-</div>
-</div>
-<p class="text-sm font-bold text-green-600">+500</p>
-</div>
-</div>
-</div>
-<!-- Bottom Navigation -->
-<div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-white dark:bg-background-dark border-t border-slate-100 dark:border-slate-800 px-4 pb-6 pt-2 z-20">
-<div class="flex justify-between items-center">
-<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500" href="#">
-<span class="material-symbols-outlined">home</span>
-<p class="text-[10px] font-bold uppercase tracking-wider">Home</p>
-</a>
-<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500" href="#">
-<span class="material-symbols-outlined">receipt_long</span>
-<p class="text-[10px] font-bold uppercase tracking-wider">Activity</p>
-</a>
-<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500" href="#">
-<span class="material-symbols-outlined">featured_seasonal_and_gifts</span>
-<p class="text-[10px] font-bold uppercase tracking-wider">Rewards</p>
-</a>
-<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">account_circle</span>
-<p class="text-[10px] font-bold uppercase tracking-wider">Account</p>
-</a>
-</div>
-</div>
-</div>
-</body></html>
-
+  <body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans"
+  >
+    <div
+      class="relative flex min-h-screen w-full flex-col max-w-md mx-auto bg-white dark:bg-background-dark shadow-xl overflow-x-hidden"
+    >
+      <!-- Header -->
+      <div
+        class="sticky top-0 z-10 flex items-center bg-white dark:bg-background-dark p-4 border-b border-slate-100 dark:border-slate-800 justify-between"
+      >
+        <button
+          class="text-slate-900 dark:text-slate-100 flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800"
+        >
+          <span class="material-symbols-outlined">arrow_back</span>
+        </button>
+        <h2
+          class="text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10"
+        >
+          Account &amp; History
+        </h2>
+      </div>
+      <!-- Profile Header -->
+      <div class="p-6 @container">
+        <div
+          class="flex w-full flex-col gap-4 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center"
+        >
+          <div class="flex gap-4 items-center">
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-20 w-20 border-2 border-primary/20 shadow-sm"
+              data-alt="Professional user profile picture avatar"
+              style="
+                background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuB4fsSLYxxL7HXzdBOptAoONzzA3_pKyNpo_W0xvHVbIebXs_8UUGBTKVmz6i72DBB-SoxhiJqODzVGaMQAWLtBRX26zMDlkN2vL3eoSe6Vnlvc6VByxj1wyRHBBkGb6Cfch9g29YheRUAGJe4ZDj7OuTZPFodT0D9LWUZ406zZyr6v0vaxgoqKuYQhKYK3YarpjYdujvMHtoa7F0QsSbQqxh8ggFpi7RgIB1nVU2kSIg1aOxhdckZ84DRfStblX7YVvTPs5y71PcsW&quot;);
+              "
+            ></div>
+            <div class="flex flex-col">
+              <p class="text-xl font-bold leading-tight">Alex Thompson</p>
+              <div class="flex items-center gap-1.5 mt-1">
+                <span
+                  class="bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border border-primary/20"
+                >
+                  Gold Tier Member
+                </span>
+              </div>
+            </div>
+          </div>
+          <button
+            class="mt-2 flex items-center justify-center gap-2 rounded-xl h-11 px-6 bg-primary text-white text-sm font-bold transition-transform active:scale-95 shadow-md shadow-primary/20"
+          >
+            <span class="material-symbols-outlined text-sm">edit</span>
+            <span>Edit Profile</span>
+          </button>
+        </div>
+      </div>
+      <!-- Tabs -->
+      <div class="px-4">
+        <div
+          class="flex border-b border-slate-100 dark:border-slate-800 justify-between overflow-x-auto hide-scrollbar"
+        >
+          <a
+            class="flex flex-col items-center justify-center border-b-2 border-primary text-primary pb-3 pt-2 px-4 shrink-0"
+            href="#"
+          >
+            <p class="text-sm font-bold">Menu</p>
+          </a>
+          <a
+            class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-2 px-4 shrink-0"
+            href="#purchases"
+          >
+            <p class="text-sm font-medium">Purchases</p>
+          </a>
+          <a
+            class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-2 px-4 shrink-0"
+            href="#points"
+          >
+            <p class="text-sm font-medium">Points</p>
+          </a>
+          <a
+            class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-2 px-4 shrink-0"
+            href="#settings"
+          >
+            <p class="text-sm font-medium">Support</p>
+          </a>
+        </div>
+      </div>
+      <!-- Menu List Section -->
+      <div class="p-4 space-y-1">
+        <h3
+          class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest px-2 pb-2 pt-4"
+        >
+          Settings &amp; Management
+        </h3>
+        <a
+          class="flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 group transition-colors"
+          href="#"
+        >
+          <div class="flex items-center gap-3">
+            <div
+              class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 p-2 rounded-lg group-hover:bg-primary/10 group-hover:text-primary transition-colors"
+            >
+              <span class="material-symbols-outlined text-[20px]">person</span>
+            </div>
+            <span class="text-[15px] font-semibold">Personal Profile</span>
+          </div>
+          <span class="material-symbols-outlined text-slate-300"
+            >chevron_right</span
+          >
+        </a>
+        <a
+          class="flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 group transition-colors"
+          href="#"
+        >
+          <div class="flex items-center gap-3">
+            <div
+              class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 p-2 rounded-lg group-hover:bg-primary/10 group-hover:text-primary transition-colors"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >notifications</span
+              >
+            </div>
+            <span class="text-[15px] font-semibold">Notification Settings</span>
+          </div>
+          <span class="material-symbols-outlined text-slate-300"
+            >chevron_right</span
+          >
+        </a>
+        <a
+          class="flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 group transition-colors"
+          href="#"
+        >
+          <div class="flex items-center gap-3">
+            <div
+              class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 p-2 rounded-lg group-hover:bg-primary/10 group-hover:text-primary transition-colors"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >security</span
+              >
+            </div>
+            <span class="text-[15px] font-semibold"
+              >Privacy &amp; PDPA Management</span
+            >
+          </div>
+          <span class="material-symbols-outlined text-slate-300"
+            >chevron_right</span
+          >
+        </a>
+        <a
+          class="flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 group transition-colors"
+          href="#"
+        >
+          <div class="flex items-center gap-3">
+            <div
+              class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 p-2 rounded-lg group-hover:bg-primary/10 group-hover:text-primary transition-colors"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >help_center</span
+              >
+            </div>
+            <span class="text-[15px] font-semibold">Help &amp; Support</span>
+          </div>
+          <span class="material-symbols-outlined text-slate-300"
+            >chevron_right</span
+          >
+        </a>
+      </div>
+      <!-- Purchase History Section -->
+      <div class="p-4 bg-slate-50 dark:bg-slate-900/40" id="purchases">
+        <div class="flex items-center justify-between px-2 pb-4">
+          <h3 class="text-slate-900 dark:text-slate-100 text-base font-bold">
+            Purchase History
+          </h3>
+          <a class="text-primary text-xs font-bold" href="#">View All</a>
+        </div>
+        <div class="space-y-3">
+          <!-- Purchase Item 1 -->
+          <div
+            class="bg-white dark:bg-background-dark p-4 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm"
+          >
+            <div class="flex justify-between items-start mb-2">
+              <div class="flex gap-3">
+                <div
+                  class="bg-primary/10 text-primary p-2 rounded-lg h-10 w-10 flex items-center justify-center"
+                >
+                  <span class="material-symbols-outlined">storefront</span>
+                </div>
+                <div>
+                  <p class="text-sm font-bold">Siam Paragon Branch</p>
+                  <p class="text-xs text-slate-500">24 Oct 2023 • In-Store</p>
+                </div>
+              </div>
+              <span
+                class="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 text-[10px] font-bold px-2 py-1 rounded"
+                >Completed</span
+              >
+            </div>
+            <div
+              class="flex justify-between items-center pt-2 border-t border-slate-50 dark:border-slate-800"
+            >
+              <span class="text-xs text-slate-500">Order #LIFF-89201</span>
+              <span class="text-sm font-bold">฿1,250.00</span>
+            </div>
+          </div>
+          <!-- Purchase Item 2 -->
+          <div
+            class="bg-white dark:bg-background-dark p-4 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm"
+          >
+            <div class="flex justify-between items-start mb-2">
+              <div class="flex gap-3">
+                <div
+                  class="bg-blue-100 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 p-2 rounded-lg h-10 w-10 flex items-center justify-center"
+                >
+                  <span class="material-symbols-outlined">shopping_cart</span>
+                </div>
+                <div>
+                  <p class="text-sm font-bold">Online Store</p>
+                  <p class="text-xs text-slate-500">22 Oct 2023 • Web</p>
+                </div>
+              </div>
+              <span
+                class="bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400 text-[10px] font-bold px-2 py-1 rounded"
+                >Processing</span
+              >
+            </div>
+            <div
+              class="flex justify-between items-center pt-2 border-t border-slate-50 dark:border-slate-800"
+            >
+              <span class="text-xs text-slate-500">Order #LIFF-89144</span>
+              <span class="text-sm font-bold">฿3,490.00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Points History Section -->
+      <div class="p-4 pb-32" id="points">
+        <div class="flex items-center justify-between px-2 pb-4 pt-2">
+          <h3 class="text-slate-900 dark:text-slate-100 text-base font-bold">
+            Points History
+          </h3>
+          <div
+            class="flex items-center gap-1 bg-primary/10 text-primary px-3 py-1 rounded-full"
+          >
+            <span class="material-symbols-outlined text-sm">stars</span>
+            <span class="text-xs font-bold">1,420 pts</span>
+          </div>
+        </div>
+        <div class="divide-y divide-slate-100 dark:divide-slate-800">
+          <div class="flex items-center justify-between py-4 px-2">
+            <div class="flex gap-3 items-center">
+              <div
+                class="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined text-slate-400 text-sm"
+                  >event_note</span
+                >
+              </div>
+              <div>
+                <p class="text-sm font-semibold">Store Purchase Reward</p>
+                <p class="text-[11px] text-slate-500 uppercase font-medium">
+                  24 OCT 2023
+                </p>
+              </div>
+            </div>
+            <p class="text-sm font-bold text-green-600">+125</p>
+          </div>
+          <div class="flex items-center justify-between py-4 px-2">
+            <div class="flex gap-3 items-center">
+              <div
+                class="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined text-slate-400 text-sm"
+                  >redeem</span
+                >
+              </div>
+              <div>
+                <p class="text-sm font-semibold">Coffee Voucher Redemption</p>
+                <p class="text-[11px] text-slate-500 uppercase font-medium">
+                  20 OCT 2023
+                </p>
+              </div>
+            </div>
+            <p class="text-sm font-bold text-slate-900 dark:text-slate-100">
+              -200
+            </p>
+          </div>
+          <div class="flex items-center justify-between py-4 px-2">
+            <div class="flex gap-3 items-center">
+              <div
+                class="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined text-slate-400 text-sm"
+                  >celebration</span
+                >
+              </div>
+              <div>
+                <p class="text-sm font-semibold">Birthday Bonus</p>
+                <p class="text-[11px] text-slate-500 uppercase font-medium">
+                  15 OCT 2023
+                </p>
+              </div>
+            </div>
+            <p class="text-sm font-bold text-green-600">+500</p>
+          </div>
+        </div>
+      </div>
+      <!-- Bottom Navigation -->
+      <div
+        class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-white dark:bg-background-dark border-t border-slate-100 dark:border-slate-800 px-4 pb-6 pt-2 z-20"
+      >
+        <div class="flex justify-between items-center">
+          <a
+            class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500"
+            href="#"
+          >
+            <span class="material-symbols-outlined">home</span>
+            <p class="text-[10px] font-bold uppercase tracking-wider">Home</p>
+          </a>
+          <a
+            class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500"
+            href="#"
+          >
+            <span class="material-symbols-outlined">receipt_long</span>
+            <p class="text-[10px] font-bold uppercase tracking-wider">
+              Activity
+            </p>
+          </a>
+          <a
+            class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500"
+            href="#"
+          >
+            <span class="material-symbols-outlined"
+              >featured_seasonal_and_gifts</span
+            >
+            <p class="text-[10px] font-bold uppercase tracking-wider">
+              Rewards
+            </p>
+          </a>
+          <a
+            class="flex flex-1 flex-col items-center justify-center gap-1 text-primary"
+            href="#"
+          >
+            <span
+              class="material-symbols-outlined"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >account_circle</span
+            >
+            <p class="text-[10px] font-bold uppercase tracking-wider">
+              Account
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

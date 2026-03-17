@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8"/>
+
+
+
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+<script id="tailwind-config">
+tailwind.config = {
+    darkMode: "class",
+    theme: {
+        extend: {
+            colors: {
+                "primary": "#ff6600",
+                "background-light": "#f8f7f5",
+                "background-dark": "#23170f",
+            },
+            fontFamily: {
+                "display": ["Prompt", "sans-serif"], "sans": ["Sarabun", "sans-serif"]
+            },
+            borderRadius: {
+                "DEFAULT": "0.5rem",
+                "lg": "1rem",
+                "xl": "1.5rem",
+                "full": "9999px"
+            },
+        },
+    },
+}
+</script>
+<title>แนะนำเพื่อน - Super CRM</title>
+<style>body { font-family: 'Sarabun', sans-serif; } h1, h2, h3, h4, h5, h6, .text-lg, .text-xl, .text-2xl, .font-display { font-family: 'Prompt', sans-serif !important; } body{min-height:max(884px,100dvh);}</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-sans text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="max-w-md mx-auto bg-white dark:bg-stone-900 min-h-screen flex flex-col shadow-xl">
+<!-- Top Header -->
+<header class="flex items-center gap-4 px-6 pt-6 pb-4 bg-white dark:bg-stone-900 sticky top-0 z-10">
+    <button onclick="history.back()" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-stone-800 text-slate-600 dark:text-stone-300 hover:bg-slate-200 transition">
+        <span class="material-symbols-outlined">arrow_back_ios_new</span>
+    </button>
+    <h1 class="text-xl font-bold flex-1 text-center pr-10 font-display">แนะนำเพื่อน</h1>
+</header>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto">
+    <!-- Hero Banner -->
+    <div class="bg-gradient-to-br from-orange-100 to-primary/20 dark:from-stone-800 dark:to-stone-900 p-8 text-center flex flex-col items-center">
+        <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-lg mb-4 text-primary">
+            <span class="material-symbols-outlined text-[48px]">redeem</span>
+        </div>
+        <h2 class="text-2xl font-bold font-display text-primary mb-2">ชวนเพื่อน รับไะแนน!</h2>
+        <p class="text-sm text-slate-600 dark:text-stone-300 mb-6">รับเลย 500 ไะแนนทั้งไุณและเพื่อน เมื่อเพื่อนสมัไรและทำการสั่งซื้อไรั้งแรก</p>
+        
+        <!-- Code Card -->
+        <div class="bg-white dark:bg-stone-800 rounded-xl p-4 w-full shadow-sm border border-orange-200 dark:border-stone-700 relative overflow-hidden">
+            <div class="absolute -right-4 -top-4 w-12 h-12 bg-primary/10 rounded-full blur-xl"></div>
+            <p class="text-xs text-slate-500 font-bold uppercase tracking-wider mb-2">รหัสแนะนำโองไุณ</p>
+            <div class="flex items-center justify-between bg-slate-50 dark:bg-stone-900 rounded-lg p-3 border border-slate-200 dark:border-stone-700">
+                <span class="text-xl font-mono font-bold tracking-widest text-slate-800 dark:text-white">ALEXJ24</span>
+                <button class="text-primary hover:text-orange-700 bg-orange-50 dark:bg-stone-800 p-2 rounded-md transition flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[18px]">content_copy</span>
+                    <span class="text-xs font-bold">ไัดลอก</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-6 space-y-6">
+        <!-- Share Buttons -->
+        <div>
+            <h3 class="text-sm font-bold text-slate-800 dark:text-white mb-4 text-center">แชร์รหัสให้เพื่อน</h3>
+            <div class="grid grid-cols-4 gap-4">
+                <button class="flex flex-col items-center gap-2">
+                    <div class="w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center shadow-md hover:-translate-y-1 transition-transform">
+                        <span class="material-symbols-outlined">chat</span>
+                    </div>
+                    <span class="text-xs font-medium">LINE</span>
+                </button>
+                <button class="flex flex-col items-center gap-2">
+                    <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center shadow-md hover:-translate-y-1 transition-transform">
+                        <span class="material-symbols-outlined">facebook</span>
+                    </div>
+                    <span class="text-xs font-medium">Facebook</span>
+                </button>
+                <button class="flex flex-col items-center gap-2">
+                    <div class="w-12 h-12 bg-sky-500 text-white rounded-full flex items-center justify-center shadow-md hover:-translate-y-1 transition-transform">
+                        <span class="material-symbols-outlined">send</span>
+                    </div>
+                    <span class="text-xs font-medium">Twitter</span>
+                </button>
+                <button class="flex flex-col items-center gap-2">
+                    <div class="w-12 h-12 bg-slate-200 text-slate-600 rounded-full flex items-center justify-center shadow-md hover:-translate-y-1 transition-transform">
+                        <span class="material-symbols-outlined">more_horiz</span>
+                    </div>
+                    <span class="text-xs font-medium">อื่นฆ</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- How it works -->
+        <div class="bg-slate-50 dark:bg-stone-800 p-5 rounded-xl border border-slate-100 dark:border-stone-700">
+            <h3 class="text-sm font-bold text-slate-800 dark:text-white mb-4 font-display">วิธีการทำงาน</h3>
+            <ol class="space-y-4">
+                <li class="flex gap-3">
+                    <div class="w-6 h-6 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center flex-shrink-0">1</div>
+                    <p class="text-sm text-slate-600 dark:text-stone-300">แชร์รหัสแนะนำโองไุณให้กับเพื่อน</p>
+                </li>
+                <li class="flex gap-3">
+                    <div class="w-6 h-6 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center flex-shrink-0">2</div>
+                    <p class="text-sm text-slate-600 dark:text-stone-300">เพื่อนสมัไรสมาชิกโดยใช้รหัสโองไุณ</p>
+                </li>
+                <li class="flex gap-3">
+                    <div class="w-6 h-6 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center flex-shrink-0">3</div>
+                    <p class="text-sm text-slate-600 dark:text-stone-300">รับ 500 ไะแนน ทันทีที่เพื่อนทำการสั่งซื้อหรือทำภารกิ่แรกสำเรง่</p>
+                </li>
+            </ol>
+        </div>
+    </div>
+</main>
+</div>
+</body>
+</html>

@@ -1,163 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRM Day - Project Showcase</title>
+    <title>CRM Day - รายการหน้าหน้าจอระบบ</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Sarabun', sans-serif;
-            background-color: #f8f9fa;
-            color: #1a1a1a;
-            overflow: hidden;
-        }
-        h1, h2, h3, h4, h5, h6, .nav-section-title {
-            font-family: 'Prompt', sans-serif;
-        }
-        .sidebar {
-            width: 280px;
-            height: 100vh;
-            border-right: 1px solid #e5e7eb;
-            background: #fff;
-            display: flex;
-            flex-direction: column;
-            flex-shrink: 0;
-        }
-        .sidebar-header {
-            padding: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            border-bottom: 1px solid #f3f4f6;
-        }
-        .sidebar-content {
-            flex: 1;
-            overflow-y: auto;
-            padding: 1rem 0;
-        }
-        .nav-section {
-            padding: 0 1rem;
-            margin-bottom: 1.5rem;
-        }
-        .nav-section-title {
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: #9ca3af;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            padding: 0.5rem 0.75rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .nav-item {
-            display: flex;
-            align-items: center;
-            padding: 0.625rem 0.75rem;
-            border-radius: 0.5rem;
-            color: #4b5563;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.2s;
-            cursor: pointer;
-            text-decoration: none;
-            margin-bottom: 2px;
-        }
-        .nav-item:hover {
-            background-color: #f3f4f6;
-            color: #111827;
-        }
-        .nav-item.active {
-            background-color: #fef2f2;
-            color: #ef4444;
-            font-weight: 600;
-        }
-        .main-container {
-            flex: 1;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            background: #fdfdfd;
-        }
-        .top-bar {
-            height: 64px;
-            border-bottom: 1px solid #e5e7eb;
-            background: #fff;
-            display: flex;
-            align-items: center;
-            padding: 0 1.5rem;
-            justify-content: space-between;
-        }
-        .preview-container {
-            flex: 1;
-            padding: 2rem;
-            display: flex;
-            justify-content: center;
-            background-color: #f3f4f6;
-            overflow: hidden;
-        }
-        .iframe-wrapper {
-            width: 100%;
-            height: 100%;
-            max-width: 1400px;
-            background: #fff;
-            border-radius: 1rem;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            overflow: hidden;
-            position: relative;
-            transition: width 0.3s ease;
-        }
-        .iframe-wrapper.mobile {
-            width: 375px;
-        }
-        .iframe-wrapper.tablet {
-            width: 768px;
-        }
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        .controls {
-            display: flex;
-            gap: 0.5rem;
-        }
-        .control-btn {
-            padding: 0.5rem;
-            border-radius: 0.375rem;
-            border: 1px solid #e5e7eb;
-            background: #fff;
-            color: #6b7280;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s;
-        }
-        .control-btn:hover {
-            background: #f9fafb;
-            color: #111827;
-        }
-        .control-btn.active {
-            background: #111827;
-            color: #fff;
-            border-color: #111827;
-        }
-        /* Custom scrollbar */
-        .sidebar-content::-webkit-scrollbar {
-            width: 4px;
-        }
-        .sidebar-content::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        .sidebar-content::-webkit-scrollbar-thumb {
-            background: #e5e7eb;
-            border-radius: 10px;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"  />
+    <link rel="stylesheet" href="index.css">
 </head>
 <body class="flex">
 
@@ -174,49 +23,53 @@
             <!-- Main navigation categories inspired by the folders -->
             
             <div class="nav-section">
-                <div class="nav-section-title">Main Screens <span class="material-symbols-outlined text-sm">expand_more</span></div>
-                <a href="html/onboarding_screen_mobile/code.html" target="preview" class="nav-item active" onclick="setActive(this)">Onboarding (Mobile)</a>
-                <a href="html/member_dashboard_home/code.html" target="preview" class="nav-item" onclick="setActive(this)">Dashboard Home</a>
+                <div class="nav-section-title">หน้าหลัก <span class="material-symbols-outlined text-sm">expand_more</span></div>
+                <a href="html/onboarding_screen_mobile/code.html" target="preview" class="nav-item active" onclick="setActive(this)">เข้าสู่ระบบ / เริ่มต้นใช้งาน</a>
+                <a href="html/member_dashboard_home/code.html" target="preview" class="nav-item" onclick="setActive(this)">หน้าหลักสถาบัน</a>
             </div>
 
             <div class="nav-section">
-                <div class="nav-section-title">Rewards & Loyalty <span class="material-symbols-outlined text-sm">expand_more</span></div>
-                <a href="html/rewards_marketplace/code.html" target="preview" class="nav-item" onclick="setActive(this)">Marketplace</a>
-                <a href="html/reward_detail/code.html" target="preview" class="nav-item" onclick="setActive(this)">Reward Detail</a>
-                <a href="html/reward_checkout/code.html" target="preview" class="nav-item" onclick="setActive(this)">Checkout</a>
-                <a href="html/tier_reward_detail/code.html" target="preview" class="nav-item" onclick="setActive(this)">Tier Rewards</a>
-                <a href="html/tier_benefits_detail/code.html" target="preview" class="nav-item" onclick="setActive(this)">Tier Benefits</a>
+                <div class="nav-section-title">ของรางวัล & สิทธิพิเศษ <span class="material-symbols-outlined text-sm">expand_more</span></div>
+                <a href="html/rewards_marketplace/code.html" target="preview" class="nav-item" onclick="setActive(this)">ตลาดของรางวัล</a>
+                <a href="html/reward_detail/code.html" target="preview" class="nav-item" onclick="setActive(this)">รายละเอียดของรางวัล</a>
+                <a href="html/reward_checkout/code.html" target="preview" class="nav-item" onclick="setActive(this)">ยืนยันการแลกรางวัล</a>
+                <a href="html/tier_reward_detail/code.html" target="preview" class="nav-item" onclick="setActive(this)">รางวัลตามระดับสมาชิก</a>
+                <a href="html/tier_benefits_detail/code.html" target="preview" class="nav-item" onclick="setActive(this)">สิทธิประโยชน์เลเวล</a>
             </div>
 
             <div class="nav-section">
-                <div class="nav-section-title">Missions & Play <span class="material-symbols-outlined text-sm">expand_more</span></div>
-                <a href="html/play_earn_missions/code.html" target="preview" class="nav-item" onclick="setActive(this)">Missions List</a>
-                <a href="html/mission_detail_play_earn/code.html" target="preview" class="nav-item" onclick="setActive(this)">Mission Detail</a>
+                <div class="nav-section-title">ภารกิจ & กิจกรรม <span class="material-symbols-outlined text-sm">expand_more</span></div>
+                <a href="html/play_earn_missions/code.html" target="preview" class="nav-item" onclick="setActive(this)">รายการภารกิจ</a>
+                <a href="html/mission_detail_play_earn/code.html" target="preview" class="nav-item" onclick="setActive(this)">รายละเอียดภารกิจ</a>
+                <a href="html/referral_program/code.html" target="preview" class="nav-item" onclick="setActive(this)">แนะนำเพื่อน</a>
             </div>
 
             <div class="nav-section">
-                <div class="nav-section-title">E-Store <span class="material-symbols-outlined text-sm">expand_more</span></div>
-                <a href="html/e_store_click_collect/code.html" target="preview" class="nav-item" onclick="setActive(this)">E-Store Home</a>
-                <a href="html/click_collect_detail/code.html" target="preview" class="nav-item" onclick="setActive(this)">Product Detail</a>
-                <a href="html/click_collect_checkout/code.html" target="preview" class="nav-item" onclick="setActive(this)">Checkout</a>
+                <div class="nav-section-title">ร้านค้า E-Store <span class="material-symbols-outlined text-sm">expand_more</span></div>
+                <a href="html/e_store_click_collect/code.html" target="preview" class="nav-item" onclick="setActive(this)">หน้าหลักร้านค้า</a>
+                <a href="html/click_collect_detail/code.html" target="preview" class="nav-item" onclick="setActive(this)">รายละเอียดสินค้า</a>
+                <a href="html/click_collect_checkout/code.html" target="preview" class="nav-item" onclick="setActive(this)">ชำระเงิน / รับสินค้า</a>
+                <a href="html/order_history/code.html" target="preview" class="nav-item" onclick="setActive(this)">ประวัติการสั่งซื้อ</a>
             </div>
 
             <div class="nav-section">
-                <div class="nav-section-title">Wallet & Account <span class="material-symbols-outlined text-sm">expand_more</span></div>
-                <a href="html/my_wallet_coupons/code.html" target="preview" class="nav-item" onclick="setActive(this)">My Coupons</a>
-                <a href="html/account_history/code.html" target="preview" class="nav-item" onclick="setActive(this)">Account History</a>
-                <a href="html/wallet_history/code.html" target="preview" class="nav-item" onclick="setActive(this)">Wallet History</a>
-                <a href="html/point_history_detail/code.html" target="preview" class="nav-item" onclick="setActive(this)">Point History</a>
-                <a href="html/inbox_notifications/code.html" target="preview" class="nav-item" onclick="setActive(this)">Notifications</a>
+                <div class="nav-section-title">กระเป๋าเงิน & บัญชี <span class="material-symbols-outlined text-sm">expand_more</span></div>
+                <a href="html/profile_edit/code.html" target="preview" class="nav-item" onclick="setActive(this)">แก้ไขโปรไฟล์</a>
+                <a href="html/my_wallet_coupons/code.html" target="preview" class="nav-item" onclick="setActive(this)">คูปองของฉัน</a>
+                <a href="html/account_history/code.html" target="preview" class="nav-item" onclick="setActive(this)">ประวัติบัญชี</a>
+                <a href="html/wallet_history/code.html" target="preview" class="nav-item" onclick="setActive(this)">ประวัติการใช้จ่าย</a>
+                <a href="html/point_history_detail/code.html" target="preview" class="nav-item" onclick="setActive(this)">ประวัติคะแนน</a>
+                <a href="html/inbox_notifications/code.html" target="preview" class="nav-item" onclick="setActive(this)">การแจ้งเตือน</a>
+                <a href="html/settings/code.html" target="preview" class="nav-item" onclick="setActive(this)">การตั้งค่า</a>
             </div>
 
             <div class="nav-section">
-                <div class="nav-section-title">Support & Content <span class="material-symbols-outlined text-sm">expand_more</span></div>
-                <a href="html/news_updates/code.html" target="preview" class="nav-item" onclick="setActive(this)">Newsfeed</a>
-                <a href="html/news_detail/code.html" target="preview" class="nav-item" onclick="setActive(this)">News Detail</a>
-                <a href="html/promotions_list/code.html" target="preview" class="nav-item" onclick="setActive(this)">Promotions</a>
-                <a href="html/promotion_detail/code.html" target="preview" class="nav-item" onclick="setActive(this)">Promo Detail</a>
-                <a href="html/help_support/code.html" target="preview" class="nav-item" onclick="setActive(this)">Help Center</a>
+                <div class="nav-section-title">ข่าวสาร & ช่วยเหลือ <span class="material-symbols-outlined text-sm">expand_more</span></div>
+                <a href="html/news_updates/code.html" target="preview" class="nav-item" onclick="setActive(this)">ข่าวสารล่าสุด</a>
+                <a href="html/news_detail/code.html" target="preview" class="nav-item" onclick="setActive(this)">รายละเอียดข่าว</a>
+                <a href="html/promotions_list/code.html" target="preview" class="nav-item" onclick="setActive(this)">รายการโปรโมชั่น</a>
+                <a href="html/promotion_detail/code.html" target="preview" class="nav-item" onclick="setActive(this)">รายละเอียดโปรโมชั่น</a>
+                <a href="html/help_support/code.html" target="preview" class="nav-item" onclick="setActive(this)">ศูนย์ช่วยเหลือ</a>
             </div>
 
         </div>
@@ -226,109 +79,34 @@
     <main class="main-container">
         <header class="top-bar">
             <div class="flex items-center gap-4">
-                <h2 id="current-page-title" class="text-lg font-semibold text-gray-800">Onboarding (Mobile)</h2>
+                <h2 id="current-page-title" class="text-lg font-semibold text-gray-800">เข้าสู่ระบบ / เริ่มต้นใช้งาน</h2>
                 <div id="page-path" class="text-xs text-gray-400 font-mono bg-gray-50 px-2 py-1 rounded">html/onboarding_screen_mobile/code.html</div>
             </div>
             
             <div class="controls">
-                <button onclick="setView('mobile')" id="btn-mobile" class="control-btn" title="Mobile View">
+                <button onclick="setView('mobile')" id="btn-mobile" class="control-btn active" title="มุมมองมือถือ">
                     <span class="material-symbols-outlined">smartphone</span>
                 </button>
-                <button onclick="setView('tablet')" id="btn-tablet" class="control-btn" title="Tablet View">
+                <button onclick="setView('tablet')" id="btn-tablet" class="control-btn" title="มุมมองแท็บเล็ต">
                     <span class="material-symbols-outlined">tablet</span>
                 </button>
-                <button onclick="setView('desktop')" id="btn-desktop" class="control-btn active" title="Desktop View">
+                <button onclick="setView('desktop')" id="btn-desktop" class="control-btn" title="มุมมองเดสก์ท็อป">
                     <span class="material-symbols-outlined">desktop_windows</span>
                 </button>
                 <div class="w-px h-6 bg-gray-200 mx-1"></div>
-                <button onclick="openExternal()" class="control-btn" title="Open in New Tab">
+                <button onclick="openExternal()" class="control-btn" title="เปิดในหน้าต่างใหม่">
                     <span class="material-symbols-outlined">open_in_new</span>
                 </button>
             </div>
         </header>
 
         <section class="preview-container">
-            <div id="iframe-wrapper" class="iframe-wrapper">
+            <div id="iframe-wrapper" class="iframe-wrapper mobile">
                 <iframe name="preview" src="html/onboarding_screen_mobile/code.html" onload="injectFonts(this)"></iframe>
             </div>
         </section>
     </main>
 
-    <script>
-        function setActive(el) {
-            // Remove active class from all items
-            document.querySelectorAll('.nav-item').forEach(item => {
-                item.classList.remove('active');
-            });
-            // Add active class to clicked item
-            el.classList.add('active');
-            
-            // Update title and path
-            document.getElementById('current-page-title').textContent = el.textContent;
-            document.getElementById('page-path').textContent = el.getAttribute('href');
-        }
-
-        function setView(mode) {
-            const wrapper = document.getElementById('iframe-wrapper');
-            const btns = document.querySelectorAll('.control-btn');
-            
-            // Remove previous mode classes
-            wrapper.classList.remove('mobile', 'tablet');
-            btns.forEach(b => b.classList.remove('active'));
-
-            if (mode === 'mobile') {
-                wrapper.classList.add('mobile');
-                document.getElementById('btn-mobile').classList.add('active');
-            } else if (mode === 'tablet') {
-                wrapper.classList.add('tablet');
-                document.getElementById('btn-tablet').classList.add('active');
-            } else {
-                document.getElementById('btn-desktop').classList.add('active');
-            }
-        }
-
-        function openExternal() {
-            const iframe = document.querySelector('iframe');
-            window.open(iframe.src, '_blank');
-        }
-
-        // Font injection for iframe content
-        function injectFonts(iframe) {
-            try {
-                const doc = iframe.contentDocument || iframe.contentWindow.document;
-                if (!doc) return;
-
-                // 1. Add Google Font link to iframe head
-                const link = doc.createElement('link');
-                link.rel = 'stylesheet';
-                link.href = 'https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap';
-                doc.head.appendChild(link);
-
-                // 2. Add Style overrides to iframe head
-                const style = doc.createElement('style');
-                style.textContent = `
-                    /* Apply Sarabun to body and normal text */
-                    body, p, span, a, li, input, button, .font-sans { 
-                        font-family: 'Sarabun', sans-serif !important; 
-                    }
-                    /* Apply Prompt to all headings and display text */
-                    h1, h2, h3, h4, h5, h6, .font-display, [class*="font-bold"], .text-lg, .text-xl, .text-2xl { 
-                        font-family: 'Prompt', sans-serif !important; 
-                    }
-                `;
-                doc.head.appendChild(style);
-
-                // 3. Update Tailwind if available in the iframe context
-                if (iframe.contentWindow.tailwind) {
-                    iframe.contentWindow.tailwind.config.theme.extend.fontFamily = {
-                        display: ['Prompt', 'sans-serif'],
-                        sans: ['Sarabun', 'sans-serif']
-                    };
-                }
-            } catch (e) {
-                console.warn("Cross-origin or initialization error injecting fonts:", e);
-            }
-        }
-    </script>
+    <script src="index.js"></script>
 </body>
 </html>
